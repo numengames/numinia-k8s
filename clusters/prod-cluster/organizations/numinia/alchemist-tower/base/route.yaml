@@ -28,7 +28,7 @@ spec:
           port: 3000
 
     # Fix requests for static assets (rewrite to /alchemist-tower/*)
-    - match: "Host(`numinia.xyz`) && PathPrefix(`/`)"
+    - match: "Host(`numinia.xyz`) && PathPrefix(`/`) && !PathPrefix(`/city-of-mesa`) && !PathPrefix(`/age-of-ai`)"
       kind: Rule
       middlewares:
         - name: "hyperfy2-numinia-alchemist-tower-rewrite-static-files"
