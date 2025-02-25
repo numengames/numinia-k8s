@@ -44,7 +44,7 @@ spec:
               secretProviderClass: hyperfy2-numinia-age-of-ai-aws-secrets
       containers:
         - name: hyperfy2-numinia-age-of-ai
-          image: ghcr.io/numengames/numinia-hyperfy:sha-e79cfd98aa1eb3e46dfb9cdbd57facaa8b9be93b
+          image: ghcr.io/numengames/numinia-hyperfy2:sha-c3ae7724be92b2b76e48c633e39e2c228bd418be
           volumeMounts:
             - name: hyperfy2-persistent-storage
               mountPath: /mnt/hyperfy2-persistent-storage
