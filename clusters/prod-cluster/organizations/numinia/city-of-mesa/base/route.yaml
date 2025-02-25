@@ -7,35 +7,13 @@ spec:
   entryPoints:
     - websecure
   routes:
-    # Redirect manual access to /city-of-mesa to /
-    - match: "Host(`numinia.xyz`) && Path(`/city-of-mesa`)"
-      kind: Rule
-      middlewares:
-        - name: "hyperfy2-numinia-city-of-mesa-rewrite-root"
-          namespace: numinia
-      services:
-        - name: "hyperfy2-numinia-city-of-mesa-service"
-          port: 3000
-
-    # Handle API and other requests to /city-of-mesa/*
     - match: "Host(`numinia.xyz`) && PathPrefix(`/city-of-mesa`)"
       kind: Rule
       middlewares:
-        - name: "hyperfy2-numinia-city-of-mesa-strip-prefix"
+        - name: city-of-mesa-strip-prefix
           namespace: numinia
       services:
         - name: "hyperfy2-numinia-city-of-mesa-service"
           port: 3000
-
-    # Fix requests for static assets (rewrite to /city-of-mesa/*)
-    - match: "Host(`numinia.xyz`) && PathPrefix(`/`)"
-      kind: Rule
-      middlewares:
-        - name: "hyperfy2-numinia-city-of-mesa-rewrite-static-files"
-          namespace: numinia
-      services:
-        - name: "hyperfy2-numinia-city-of-mesa-service"
-          port: 3000
-
   tls:
     secretName: numinia-tls
