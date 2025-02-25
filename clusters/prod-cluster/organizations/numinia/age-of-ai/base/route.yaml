@@ -9,9 +9,6 @@ spec:
   routes:
     - match: "Host(`numinia.xyz`) && PathPrefix(`/age-of-ai`)"
       kind: Rule
-      middlewares:
-        - name: age-of-ai-strip-prefix
-          namespace: numinia
       services:
         - name: "hyperfy2-numinia-age-of-ai-service"
           port: 3000

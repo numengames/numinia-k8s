@@ -9,9 +9,6 @@ spec:
   routes:
     - match: "Host(`numinia.xyz`) && PathPrefix(`/city-of-mesa`)"
       kind: Rule
-      middlewares:
-        - name: city-of-mesa-strip-prefix
-          namespace: numinia
       services:
         - name: "hyperfy2-numinia-city-of-mesa-service"
           port: 3000
