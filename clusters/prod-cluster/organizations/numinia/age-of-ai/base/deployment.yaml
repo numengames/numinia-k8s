@@ -71,6 +71,8 @@ spec:
               value: ${PUBLIC_API_URL}
             - name: PUBLIC_ASSETS_URL
               value: ${PUBLIC_ASSETS_URL}
+            - name: BASE_PATH
+              value: ${BASE_PATH}
             - name: PUBLIC_MAX_UPLOAD_SIZE
               value: "50"
             - name: SAVE_INTERVAL
