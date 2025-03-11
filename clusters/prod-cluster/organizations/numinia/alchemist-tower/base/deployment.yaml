@@ -25,7 +25,7 @@ spec:
     spec:
       serviceAccountName: aws-secret-manager-sa
       imagePullSecrets:
-        - name: github/deploy
+        - name: aws-secrets-numinia-github-deploy
       nodeSelector:
         NodeType: memory
       tolerations:
