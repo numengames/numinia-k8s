@@ -1,41 +1,38 @@
-{{- if not .Values.knative.enabled }}
-apiVersion: apps/v1
-kind: Deployment
+{{- if .Values.knative.enabled }}
+apiVersion: serving.knative.dev/v1
+kind: Service
 metadata:
-  name: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}-deployment
+  name: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
   namespace: {{ .Values.orgName }}
   labels:
     app: {{ .Values.appName }}
     environment: {{ .Values.environment }}
+    component: game-world
     pod-type: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
 spec:
-  replicas: {{ .Values.replicas | default 1 }}
-  selector:
-    matchLabels:
-      app: {{ .Values.appName }}
-      environment: {{ .Values.environment }}
-      pod-type: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
   template:
     metadata:
       labels:
         app: {{ .Values.appName }}
         environment: {{ .Values.environment }}
         pod-type: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
+      annotations:
+        # Configuraciones de autoscaling para Knative
+        autoscaling.knative.dev/class: "kpa.autoscaling.knative.dev"
+        autoscaling.knative.dev/metric: "{{ .Values.knative.autoscaling.metric }}"
+        autoscaling.knative.dev/target: "{{ .Values.knative.autoscaling.target }}"
+        autoscaling.knative.dev/min-scale: "{{ .Values.knative.autoscaling.minScale }}"
+        autoscaling.knative.dev/max-scale: "{{ .Values.knative.autoscaling.maxScale }}"
+        autoscaling.knative.dev/window: "{{ .Values.knative.autoscaling.window }}"
+        autoscaling.knative.dev/scale-down-delay: "{{ .Values.knative.autoscaling.scaleDownDelay }}"
+        autoscaling.knative.dev/scale-to-zero-grace-period: "{{ .Values.knative.autoscaling.scaleToZeroGracePeriod }}"
     spec:
       serviceAccountName: {{ .Values.serviceAccountName }}
-      volumes:
-        - name: hyperfy2-persistent-storage
-          persistentVolumeClaim:
-            claimName: {{ .Values.orgName }}-shared-pvc
-        - name: secrets-store
-          csi:
-            driver: secrets-store.csi.k8s.io
-            readOnly: true
-            volumeAttributes:
-              secretProviderClass: aws-secrets-hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
       containers:
         - name: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.port | default 3000 | int }}
           volumeMounts:
             - name: hyperfy2-persistent-storage
               mountPath: /mnt/hyperfy2-persistent-storage
@@ -96,4 +93,14 @@ spec:
             limits:
               memory: {{ .Values.resources.limits.memory | quote }}
               cpu: {{ .Values.resources.limits.cpu | quote }}
+      volumes:
+        - name: hyperfy2-persistent-storage
+          persistentVolumeClaim:
+            claimName: {{ .Values.orgName }}-shared-pvc
+        - name: secrets-store
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: aws-secrets-hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
 {{- end }} 

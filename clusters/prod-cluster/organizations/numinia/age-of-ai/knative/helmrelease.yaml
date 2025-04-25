@@ -1,13 +1,13 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: alchemist-tower-pre
+  name: age-of-ai-knative
   namespace: numinia
   annotations:
-    reconcile.fluxcd.io/requestedAt: "1745597470"
+    reconcile.fluxcd.io/requestedAt: "1745581497"
 spec:
   interval: 5m
-  releaseName: alchemist-tower-pre
+  releaseName: age-of-ai-knative
   targetNamespace: numinia
   install:
     remediation:
@@ -15,8 +15,6 @@ spec:
   upgrade:
     remediation:
       retries: 3
-  driftDetection:
-    mode: enabled
   chart:
     spec:
       chart: ./clusters/prod-cluster/base/hyperfy2
@@ -27,5 +25,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: alchemist-tower-pre-values
+      name: age-of-ai-knative-values
       valuesKey: values.yaml 

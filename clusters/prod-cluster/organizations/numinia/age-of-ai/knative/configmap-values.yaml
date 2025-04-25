@@ -1,27 +1,28 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: alchemist-tower-pre-values
+  name: age-of-ai-knative-values
   namespace: numinia
   annotations:
     config-version: "1.0.0"
 data:
   values.yaml: |
     orgName: "numinia"
-    appName: "alchemist-tower"
-    environment: "pre"
+    appName: "age-of-ai"
+    environment: "knative"
     serviceAccountName: "aws-secret-manager-sa"
     image:
-      repository: "ghcr.io/hyperfy-xyz/hyperfy"
-      tag: "sha-ce5403a0fe4cb550bf0f9ccea78c25e1b959cd99"
-    world: "alchemist-tower"
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "sha-2083fe01910737f770c9a527616defb1814e7603"
+    world: "age-of-ai"
     tlsSecretName: "numinia-tls"
-    hostname: "pre.alchemist-tower.numinia.xyz"
+    hostname: "age-of-ai-knative.numinia.xyz"
     storagePath: "/mnt/hyperfy2-persistent-storage"
-    publicWsUrl: "https://pre.alchemist-tower.numinia.xyz/ws"
-    publicApiUrl: "https://pre.alchemist-tower.numinia.xyz/api"
-    publicAssetsUrl: "https://pre.alchemist-tower.numinia.xyz/assets"
+    publicWsUrl: "https://age-of-ai-knative.numinia.xyz/ws"
+    publicApiUrl: "https://age-of-ai-knative.numinia.xyz/api"
+    publicAssetsUrl: "https://age-of-ai-knative.numinia.xyz/assets"
     publicMaxUploadSize: "100MB"
+  
     knative:
       enabled: true
       autoscaling:
@@ -32,10 +33,11 @@ data:
         window: 60s
         scaleToZeroGracePeriod: 300s
         scaleDownDelay: 0s
+    
     resources:
       requests:
         cpu: "256m"
         memory: "256Mi"
       limits:
         cpu: "512m"
-        memory: "512Mi"
+        memory: "512Mi" 

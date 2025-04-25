@@ -21,6 +21,18 @@ hostname: "app-name.org-name.example.com"
 publicAssetsUrl: "https://domain.com/assets"
 storagePath: "/mnt/hyperfy2-persistent-storage/app-name"
 
+# Knative configuration
+knative:
+  enabled: false
+  autoscaling:
+    minScale: 0
+    maxScale: 1
+    target: 100
+    metric: concurrency
+    window: 60s
+    scaleToZeroGracePeriod: 300s
+    scaleDownDelay: 0s
+
 resources:
   requests:
     memory: "64Mi"
