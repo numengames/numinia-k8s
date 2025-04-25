@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: knative-serving
+  namespace: flux-system
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: knative-serving
+      version: '1.14.0'
+      sourceRef:
+        kind: HelmRepository
+        name: knative-charts
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    global:
+      proxy:
+        autoScaling:
+          minReplicas: 0
+          maxReplicas: 1
+      ingress:
+        class: "traefik"
+    autoscaler:
+      scaleToZeroEnabled: true
+      scaleToZeroPodRetentionPeriod: "300s"
+      stable-window: "60s"
+      scale-to-zero-grace-period: "30s"
+      scale-to-zero-pod-retention-period: "30s"
+    activator:
+      replicas: 2
