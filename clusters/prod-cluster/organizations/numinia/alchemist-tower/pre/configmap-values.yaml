@@ -23,15 +23,7 @@ data:
     publicAssetsUrl: "https://pre.alchemist-tower.numinia.xyz/assets"
     publicMaxUploadSize: "100MB"
     knative:
-      enabled: true
-      autoscaling:
-        minScale: 0
-        maxScale: 1
-        target: 100
-        metric: concurrency
-        window: 60s
-        scaleToZeroGracePeriod: 300s
-        scaleDownDelay: 0s
+      enabled: false
     resources:
       requests:
         cpu: "256m"
