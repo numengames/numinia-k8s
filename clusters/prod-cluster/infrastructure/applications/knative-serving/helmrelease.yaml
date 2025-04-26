@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: knative-serving
-  namespace: flux-system
+  namespace: knative-serving
 spec:
   interval: 1h
   chart:
