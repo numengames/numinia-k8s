@@ -7,4 +7,4 @@ spec:
   interval: 1h
   url: https://github.com/knative/serving
   ref:
-    tag: v1.18.0
+    tag: v0.45.0

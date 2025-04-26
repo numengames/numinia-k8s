@@ -8,7 +8,7 @@ spec:
   chart:
     spec:
       chart: knative-serving
-      version: '1.14.0'
+      version: '0.45.0'
       sourceRef:
         kind: HelmRepository
         name: knative-charts
