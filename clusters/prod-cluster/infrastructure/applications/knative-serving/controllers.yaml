@@ -15,4 +15,5 @@ spec:
   wait: true
   timeout: 5m
   dependsOn:
-    - name: knative-serving-core 
+    - name: knative-serving-core
+    - name: knative-serving-config 

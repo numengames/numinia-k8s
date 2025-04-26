@@ -11,31 +11,10 @@ spec:
     kind: GitRepository
     name: knative-serving
     namespace: knative-serving
-  path: ./config/core
+  path: ./config/core/deployments
   wait: true
   timeout: 5m
   postBuild:
     substituteFrom: []
-  patches:
-    - patch: |-
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: config-autoscaler
-        data:
-          enable-scale-to-zero: "true"
-      target:
-        kind: ConfigMap
-        name: config-autoscaler
-    - patch: |-
-        apiVersion: v1
-        kind: ConfigMap
-        metadata:
-          name: config-network
-        data:
-          ingress.class: "traefik"
-      target:
-        kind: ConfigMap
-        name: config-network
   dependsOn:
     - name: knative-serving-crds

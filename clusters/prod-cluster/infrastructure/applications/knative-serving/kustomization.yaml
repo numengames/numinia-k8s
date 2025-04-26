@@ -4,6 +4,7 @@ resources:
   - namespace.yaml
   - gitrepository.yaml
   - crds.yaml
+  - configmaps.yaml
   - core.yaml
   - networking.yaml
   - controllers.yaml 
