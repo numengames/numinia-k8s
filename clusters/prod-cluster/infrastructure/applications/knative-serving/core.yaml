@@ -1,0 +1,49 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: knative-serving-core
+  namespace: knative-serving
+spec:
+  interval: 10m
+  prune: true
+  targetNamespace: knative-serving
+  sourceRef:
+    kind: GitRepository
+    name: knative-serving
+    namespace: knative-serving
+  path: ./config/core
+  wait: true
+  timeout: 5m
+  postBuild:
+    substituteFrom: []
+  patches:
+    - patch: |-
+        apiVersion: apps/v1
+        kind: Deployment
+        metadata:
+          name: activator
+        spec:
+          template:
+            spec:
+              containers:
+              - name: activator
+                env:
+                - name: SYSTEM_NAMESPACE
+                  value: knative-serving
+      target:
+        kind: Deployment
+        name: activator
+    - patch: |-
+        - op: add
+          path: /spec/template/spec/containers/0/args/-
+          value: "--autoscaler-configmap=config-autoscaler"
+        - op: add
+          path: /spec/template/spec/containers/0/args/-
+          value: "--enable-scale-to-zero=true"
+      target:
+        kind: Deployment
+        name: autoscaler
+        namespace: knative-serving
+  dependsOn:
+    - name: traefik
+      namespace: traefik
