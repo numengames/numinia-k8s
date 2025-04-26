@@ -76,7 +76,6 @@ metadata:
 spec:
   interval: 1h
   url: https://charts.external-secrets.io
-
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
@@ -86,3 +85,14 @@ metadata:
 spec:
   interval: 1h
   url: https://prometheus-community.github.io/helm-charts
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: knative-charts
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://knative-sandbox.github.io/helm-charts
+  timeout: 3m 
+
