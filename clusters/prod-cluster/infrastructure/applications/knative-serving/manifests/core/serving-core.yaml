@@ -47,10 +47,12 @@ spec:
   selector:
     matchLabels:
       app: activator
+      role: activator
   template:
     metadata:
       labels:
         app: activator
+        role: activator
         app.kubernetes.io/component: activator
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -143,10 +145,12 @@ spec:
   selector:
     matchLabels:
       app: webhook
+      role: webhook
   template:
     metadata:
       labels:
         app: webhook
+        role: webhook
         app.kubernetes.io/component: webhook
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
