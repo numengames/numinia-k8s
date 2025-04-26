@@ -8,6 +8,45 @@ metadata:
     app.kubernetes.io/name: knative-serving
     app.kubernetes.io/version: "1.11.0"
 ---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: knative-kourier
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+rules:
+- apiGroups: [""]
+  resources: ["services", "endpoints", "secrets", "configmaps"]
+  verbs: ["get", "list", "watch"]
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["leases"]
+  verbs: ["get", "list", "create", "update", "delete", "patch", "watch"]
+- apiGroups: ["networking.internal.knative.dev"]
+  resources: ["ingresses", "ingresses/status"]
+  verbs: ["get", "list", "watch", "update"]
+- apiGroups: ["networking.k8s.io"]
+  resources: ["ingresses", "ingresses/status"]
+  verbs: ["get", "list", "watch", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: knative-kourier
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+subjects:
+- kind: ServiceAccount
+  name: net-kourier
+  namespace: knative-serving
+roleRef:
+  kind: ClusterRole
+  name: knative-kourier
+  apiGroup: rbac.authorization.k8s.io
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
