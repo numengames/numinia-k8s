@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - gitrepository.yaml
-  - core.yaml
-  - networking.yaml 
+  - crds.yaml
+  - core.yaml 

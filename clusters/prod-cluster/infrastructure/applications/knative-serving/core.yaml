@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: knative-serving
     namespace: knative-serving
-  path: ./config/core
+  path: ./config
   wait: true
   timeout: 5m
   postBuild:
@@ -21,9 +21,9 @@ spec:
         apiVersion: v1
         kind: ConfigMap
         metadata:
-          name: config-deployment
+          name: config-autoscaler
         data:
-          autoscaler.enable-scale-to-zero: "true"
+          enable-scale-to-zero: "true"
       target:
         kind: ConfigMap
         name: config-autoscaler
@@ -31,12 +31,14 @@ spec:
         apiVersion: v1
         kind: ConfigMap
         metadata:
-          name: config-deployment
+          name: config-network
         data:
-          registriesSkippingTagResolving: "kind.local,ko.local,dev.local"
+          ingress.class: "traefik"
       target:
         kind: ConfigMap
-        name: config-deployment
+        name: config-network
   dependsOn:
     - name: traefik
       namespace: traefik
+    - name: knative-serving-crds
+      namespace: knative-serving
