@@ -66,6 +66,36 @@ roleRef:
   name: knative-kourier
   apiGroup: rbac.authorization.k8s.io
 ---
+# Añadir el ConfigMap config-kourier
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config-kourier
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+data:
+  _example: |
+    ################################
+    #                              #
+    #    EXAMPLE CONFIGURATION     #
+    #                              #
+    ################################
+
+    # This block is not actually functional configuration,
+    # but serves to illustrate the available configuration
+    # options and document them in a way that is accessible
+    # to users that `kubectl get configmap -oyaml`
+
+    # Specifies whether to use cluster local or ExternalDomains for services.
+    # The valid values are "cluster.local" or "cluster.local,example.com".
+    # If "cluster.local" is used, net-kourier will use the internal networking.
+  cluster-domain: "cluster.local"
+  # The domain template to use when creating domain names for services.
+  domain-template: "{{.Name}}.{{.Namespace}}.{{.Domain}}"
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
