@@ -47,6 +47,25 @@ roleRef:
   name: knative-kourier
   apiGroup: rbac.authorization.k8s.io
 ---
+# Agregar un RoleBinding específico para el namespace knative-serving
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: knative-kourier-namespace
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+subjects:
+- kind: ServiceAccount
+  name: net-kourier
+  namespace: knative-serving
+roleRef:
+  kind: ClusterRole
+  name: knative-kourier
+  apiGroup: rbac.authorization.k8s.io
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
