@@ -95,3 +95,4 @@ spec:
     namespace: flux-system
   dependsOn:
     - name: traefik
+      namespace: traefik
