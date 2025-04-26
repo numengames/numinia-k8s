@@ -4,13 +4,9 @@ metadata:
   name: knative-serving-crds
   namespace: knative-serving
 spec:
-  interval: 10m
+  interval: 5m
   prune: true
   targetNamespace: knative-serving
-  sourceRef:
-    kind: GitRepository
-    name: knative-serving
-    namespace: knative-serving
-  path: ./config/core/300-resources
+  url: https://github.com/knative/serving/releases/download/knative-v1.11.0/serving-crds.yaml
   wait: true
   timeout: 5m 
