@@ -7,7 +7,11 @@ spec:
   interval: 5m
   prune: true
   targetNamespace: knative-serving
-  url: https://github.com/knative/net-contour/releases/download/knative-v1.11.0/net-contour.yaml
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+    namespace: flux-system
+  path: ./clusters/prod-cluster/infrastructure/applications/knative-serving/manifests/networking
   wait: true
   timeout: 5m
   dependsOn:

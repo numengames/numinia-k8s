@@ -1,0 +1,101 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: net-kourier
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: net-kourier-controller
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: net-kourier-controller
+  template:
+    metadata:
+      labels:
+        app: net-kourier-controller
+        app.kubernetes.io/component: net-kourier
+        app.kubernetes.io/name: knative-serving
+        app.kubernetes.io/version: "1.11.0"
+    spec:
+      serviceAccountName: net-kourier
+      containers:
+      - name: controller
+        image: gcr.io/knative-releases/knative.dev/net-kourier/cmd/kourier:v1.11.0
+        env:
+        - name: SYSTEM_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kourier-gateway
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: 3scale-kourier-gateway
+  template:
+    metadata:
+      labels:
+        app: 3scale-kourier-gateway
+        app.kubernetes.io/component: net-kourier
+        app.kubernetes.io/name: knative-serving
+        app.kubernetes.io/version: "1.11.0"
+    spec:
+      containers:
+      - name: envoy
+        image: docker.io/envoyproxy/envoy:v1.22.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: http2
+          containerPort: 8080
+          protocol: TCP
+        - name: https
+          containerPort: 8443
+          protocol: TCP
+        - name: admin
+          containerPort: 9000
+          protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kourier
+  namespace: knative-serving
+  labels:
+    app.kubernetes.io/component: net-kourier
+    app.kubernetes.io/name: knative-serving
+    app.kubernetes.io/version: "1.11.0"
+spec:
+  ports:
+  - name: http2
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8443
+  selector:
+    app: 3scale-kourier-gateway
+  type: LoadBalancer 
