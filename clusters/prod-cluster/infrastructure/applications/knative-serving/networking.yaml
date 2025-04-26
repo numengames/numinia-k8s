@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: knative-serving
     namespace: knative-serving
-  path: ./third_party/net-istio/net-istio
+  path: ./config/core
   wait: true
   timeout: 5m
   dependsOn:

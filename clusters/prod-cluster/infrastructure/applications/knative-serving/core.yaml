@@ -18,32 +18,25 @@ spec:
     substituteFrom: []
   patches:
     - patch: |-
-        apiVersion: apps/v1
-        kind: Deployment
+        apiVersion: v1
+        kind: ConfigMap
         metadata:
-          name: activator
-        spec:
-          template:
-            spec:
-              containers:
-              - name: activator
-                env:
-                - name: SYSTEM_NAMESPACE
-                  value: knative-serving
+          name: config-deployment
+        data:
+          autoscaler.enable-scale-to-zero: "true"
       target:
-        kind: Deployment
-        name: activator
+        kind: ConfigMap
+        name: config-autoscaler
     - patch: |-
-        - op: add
-          path: /spec/template/spec/containers/0/args/-
-          value: "--autoscaler-configmap=config-autoscaler"
-        - op: add
-          path: /spec/template/spec/containers/0/args/-
-          value: "--enable-scale-to-zero=true"
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: config-deployment
+        data:
+          registriesSkippingTagResolving: "kind.local,ko.local,dev.local"
       target:
-        kind: Deployment
-        name: autoscaler
-        namespace: knative-serving
+        kind: ConfigMap
+        name: config-deployment
   dependsOn:
     - name: traefik
       namespace: traefik
