@@ -36,7 +36,7 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: activator
+  name: activator-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: activator
@@ -46,13 +46,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: activator
-      role: activator
+      app: activator-v2
   template:
     metadata:
       labels:
-        app: activator
-        role: activator
+        app: activator-v2
         app.kubernetes.io/component: activator
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -70,7 +68,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: autoscaler
+  name: autoscaler-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: autoscaler
@@ -80,11 +78,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: autoscaler
+      app: autoscaler-v2
   template:
     metadata:
       labels:
-        app: autoscaler
+        app: autoscaler-v2
         app.kubernetes.io/component: autoscaler
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -102,7 +100,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: controller
+  name: controller-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: controller
@@ -112,11 +110,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: controller
+      app: controller-v2
   template:
     metadata:
       labels:
-        app: controller
+        app: controller-v2
         app.kubernetes.io/component: controller
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -134,7 +132,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webhook
+  name: webhook-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: webhook
@@ -144,13 +142,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: webhook
-      role: webhook
+      app: webhook-v2
   template:
     metadata:
       labels:
-        app: webhook
-        role: webhook
+        app: webhook-v2
         app.kubernetes.io/component: webhook
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -176,7 +172,7 @@ metadata:
     app.kubernetes.io/version: "1.11.0"
 spec:
   selector:
-    app: activator
+    app: activator-v2
   ports:
   - name: http1
     port: 80
@@ -197,7 +193,7 @@ metadata:
     app.kubernetes.io/version: "1.11.0"
 spec:
   selector:
-    app: autoscaler
+    app: autoscaler-v2
   ports:
   - name: http
     port: 80
@@ -218,7 +214,7 @@ metadata:
     app.kubernetes.io/version: "1.11.0"
 spec:
   selector:
-    app: controller
+    app: controller-v2
   ports:
   - name: http
     port: 80
@@ -236,7 +232,7 @@ metadata:
     app.kubernetes.io/version: "1.11.0"
 spec:
   selector:
-    app: webhook
+    app: webhook-v2
   ports:
   - name: https
     port: 443

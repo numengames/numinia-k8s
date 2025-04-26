@@ -11,7 +11,7 @@ metadata:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: net-kourier-controller
+  name: net-kourier-controller-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: net-kourier
@@ -21,11 +21,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: net-kourier-controller
+      app: net-kourier-controller-v2
   template:
     metadata:
       labels:
-        app: net-kourier-controller
+        app: net-kourier-controller-v2
         app.kubernetes.io/component: net-kourier
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -43,7 +43,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: kourier-gateway
+  name: kourier-gateway-v2
   namespace: knative-serving
   labels:
     app.kubernetes.io/component: net-kourier
@@ -53,11 +53,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: 3scale-kourier-gateway
+      app: kourier-gateway-v2
   template:
     metadata:
       labels:
-        app: 3scale-kourier-gateway
+        app: kourier-gateway-v2
         app.kubernetes.io/component: net-kourier
         app.kubernetes.io/name: knative-serving
         app.kubernetes.io/version: "1.11.0"
@@ -97,5 +97,5 @@ spec:
     protocol: TCP
     targetPort: 8443
   selector:
-    app: 3scale-kourier-gateway
+    app: kourier-gateway-v2
   type: LoadBalancer 
