@@ -38,7 +38,4 @@ spec:
         kind: ConfigMap
         name: config-network
   dependsOn:
-    - name: traefik
-      namespace: traefik
     - name: knative-serving-crds
-      namespace: knative-serving
