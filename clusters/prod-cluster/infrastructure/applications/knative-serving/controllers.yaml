@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: knative-serving-net
+  name: knative-serving-controllers
   namespace: knative-serving
 spec:
   interval: 10m
@@ -11,7 +11,7 @@ spec:
     kind: GitRepository
     name: knative-serving
     namespace: knative-serving
-  path: ./config/istio-ingress
+  path: ./config/hpa-autoscaling
   wait: true
   timeout: 5m
   dependsOn:
