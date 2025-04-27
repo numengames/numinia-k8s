@@ -5,6 +5,13 @@ metadata:
   namespace: numinia
   annotations:
     config-version: "1.0.0"
+    autoscaling.knative.dev/metric: "{{ .Values.knative.autoscaling.metric }}"
+    autoscaling.knative.dev/target: "{{ .Values.knative.autoscaling.target }}"
+    autoscaling.knative.dev/min-scale: "{{ .Values.knative.autoscaling.minScale }}"
+    autoscaling.knative.dev/max-scale: "{{ .Values.knative.autoscaling.maxScale }}"
+    autoscaling.knative.dev/window: "{{ .Values.knative.autoscaling.window }}"
+    autoscaling.knative.dev/scale-down-delay: "{{ .Values.knative.autoscaling.scaleDownDelay }}"
+    autoscaling.knative.dev/scale-to-zero-grace-period: "{{ .Values.knative.autoscaling.scaleToZeroGracePeriod }}"
 data:
   values.yaml: |
     orgName: "numinia"
@@ -23,7 +30,15 @@ data:
     publicAssetsUrl: "https://pre.alchemist-tower.numinia.xyz/assets"
     publicMaxUploadSize: "100MB"
     knative:
-      enabled: false
+      enabled: true
+      autoscaling:
+        metric: "concurrency"
+        target: "100"
+        minScale: "0"
+        maxScale: "1"
+        window: "60s"
+        scaleDownDelay: "0s"
+        scaleToZeroGracePeriod: "500s"
     resources:
       requests:
         cpu: "256m"
