@@ -4,7 +4,7 @@ metadata:
   name: alchemist-tower-pre
   namespace: numinia
   annotations:
-    reconcile.fluxcd.io/requestedAt: "1745597470"
+    reconcile.fluxcd.io/requestedAt: "1745750365"
 spec:
   interval: 5m
   releaseName: alchemist-tower-pre
