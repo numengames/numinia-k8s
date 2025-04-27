@@ -5,13 +5,6 @@ metadata:
   namespace: numinia
   annotations:
     config-version: "1.0.0"
-    autoscaling.knative.dev/metric: "{{ .Values.knative.autoscaling.metric }}"
-    autoscaling.knative.dev/target: "{{ .Values.knative.autoscaling.target }}"
-    autoscaling.knative.dev/min-scale: "{{ .Values.knative.autoscaling.minScale }}"
-    autoscaling.knative.dev/max-scale: "{{ .Values.knative.autoscaling.maxScale }}"
-    autoscaling.knative.dev/window: "{{ .Values.knative.autoscaling.window }}"
-    autoscaling.knative.dev/scale-down-delay: "{{ .Values.knative.autoscaling.scaleDownDelay }}"
-    autoscaling.knative.dev/scale-to-zero-grace-period: "{{ .Values.knative.autoscaling.scaleToZeroGracePeriod }}"
 data:
   values.yaml: |
     orgName: "numinia"
