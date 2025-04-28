@@ -1,0 +1,100 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: hyperfy2-numinia-alchemist-tower-pre
+  namespace: numinia
+  labels:
+    app: alchemist-tower
+    environment: pre
+    component: game-world
+    pod-type: hyperfy2-numinia-alchemist-tower-pre
+spec:
+  template:
+    metadata:
+      labels:
+        app: alchemist-tower
+        environment: pre
+        pod-type: hyperfy2-numinia-alchemist-tower-pre
+      annotations:
+        # Configuraciones de autoscaling para Knative
+        autoscaling.knative.dev/class: "kpa.autoscaling.knative.dev"
+        autoscaling.knative.dev/metric: "concurrency"
+        autoscaling.knative.dev/target: "100"
+        autoscaling.knative.dev/min-scale: "0"
+        autoscaling.knative.dev/max-scale: "1"
+        autoscaling.knative.dev/window: "60s"
+        autoscaling.knative.dev/scale-down-delay: "0s"
+        autoscaling.knative.dev/scale-to-zero-grace-period: "500s"
+    spec:
+      serviceAccountName: aws-secret-manager-sa
+      containers:
+        - name: hyperfy2-numinia-alchemist-tower-pre
+          image: ghcr.io/hyperfy-xyz/hyperfy:sha-ce5403a0fe4cb550bf0f9ccea78c25e1b959cd99
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: hyperfy2-persistent-storage
+              mountPath: /mnt/hyperfy2-persistent-storage
+              subPath: alchemist-tower
+            - name: secrets-store
+              mountPath: "/mnt/secrets-store"
+              readOnly: true
+          env:
+            - name: SAVE_INTERVAL
+              value: "30"
+            - name: WORLD
+              value: "alchemist-tower"
+            - name: PORT
+              value: "3000"
+            - name: STORAGE_PATH
+              value: "/mnt/hyperfy2-persistent-storage"
+            - name: PUBLIC_WS_URL
+              value: "https://pre.alchemist-tower.numinia.xyz/ws"
+            - name: PUBLIC_API_URL
+              value: "https://pre.alchemist-tower.numinia.xyz/api"
+            - name: PUBLIC_ASSETS_URL
+              value: "https://pre.alchemist-tower.numinia.xyz/assets"
+            - name: PUBLIC_MAX_UPLOAD_SIZE
+              value: "100MB"
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets-hyperfy2-numinia-alchemist-tower-pre
+                  key: JWT_SECRET
+            - name: ADMIN_CODE
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets-hyperfy2-numinia-alchemist-tower-pre
+                  key: ADMIN_CODE
+            - name: LIVEKIT_WS_URL
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets-hyperfy2-numinia-alchemist-tower-pre
+                  key: LIVEKIT_WS_URL
+            - name: LIVEKIT_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets-hyperfy2-numinia-alchemist-tower-pre
+                  key: LIVEKIT_API_KEY
+            - name: LIVEKIT_API_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: aws-secrets-hyperfy2-numinia-alchemist-tower-pre
+                  key: LIVEKIT_API_SECRET
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "256m"
+            limits:
+              memory: "512Mi"
+              cpu: "512m"
+      volumes:
+        - name: hyperfy2-persistent-storage
+          persistentVolumeClaim:
+            claimName: numinia-shared-pvc
+        - name: secrets-store
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: aws-secrets-hyperfy2-numinia-alchemist-tower-pre 

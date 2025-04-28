@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: knative-serving
+  namespace: knative-serving
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: knative-serving
+      version: "1.18.0"
+      sourceRef:
+        kind: HelmRepository
+        name: knative-charts
+        namespace: flux-system
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    kourier:
+      enabled: true
+      replicaCount: 1
+      service:
+        type: LoadBalancer
+    config:
+      domain:
+        # Usa el dominio default de Minikube
+        example.org: ""
+      network:
+        ingress-class: "kourier.ingress.networking.knative.dev"
+      autoscaler:
+        enable-scale-to-zero: "true"
+        scale-to-zero-grace-period: "30s"
+        scale-to-zero-pod-retention-period: "60s"
+        stable-window: "60s"
+  dependsOn:
+    - name: traefik
+      namespace: traefik 
