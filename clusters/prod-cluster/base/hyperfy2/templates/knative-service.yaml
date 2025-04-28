@@ -11,10 +11,7 @@ metadata:
     pod-type: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
   annotations:
     networking.knative.dev/visibility: "external"
-    {{- if .Values.hostname }}
-    networking.knative.dev/domainTemplate: "{{`{{.Name}}.{{.Namespace}}.{{.Domain}}`}}"
     networking.knative.dev/domain: "{{ .Values.domainRoot | default "numinia.xyz" }}"
-    {{- end }}
 spec:
   template:
     metadata:

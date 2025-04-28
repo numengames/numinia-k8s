@@ -17,7 +17,14 @@ spec:
       scale-to-zero-pod-retention-period: "60s"
       stable-window: "60s"
     domain:
-      "numinia.xyz": ""
-      "numen.games": ""
-      "art-unchained.io": ""
-      "activeinference.institute": ""
+      "numinia.xyz": |
+        selector: {}
+      "numen.games": |
+        selector:
+          domainRoot: numen.games
+      "art-unchained.io": |
+        selector:
+          domainRoot: art-unchained.io
+      "activeinference.institute": |
+        selector:
+          domainRoot: activeinference.institute
