@@ -93,6 +93,5 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  url: https://github.com/knative-sandbox/helm-charts/releases/download
+  url: https://knative.github.io/operator
   timeout: 3m 
-

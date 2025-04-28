@@ -83,11 +83,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: knative-serving
-  namespace: knative-serving
+  name: knative-operator
+  namespace: knative-operator
 spec:
   interval: 5m0s
-  path: ./clusters/prod-cluster/infrastructure/applications/knative-serving
+  path: ./clusters/prod-cluster/infrastructure/applications/knative/operator
   prune: true
   sourceRef:
     kind: GitRepository
@@ -96,3 +96,20 @@ spec:
   dependsOn:
     - name: traefik
       namespace: traefik
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: knative-serving
+  namespace: knative-serving
+spec:
+  interval: 5m0s
+  path: ./clusters/prod-cluster/infrastructure/applications/knative/serving
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: numinia-k8s
+    namespace: flux-system
+  dependsOn:
+    - name: knative-operator
+      namespace: knative-operator
