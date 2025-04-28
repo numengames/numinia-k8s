@@ -17,6 +17,7 @@ data:
     world: "alchemist-tower"
     tlsSecretName: "numinia-tls"
     hostname: "pre.alchemist-tower.numinia.xyz"
+    domainRoot: "numinia.xyz"
     storagePath: "/mnt/hyperfy2-persistent-storage"
     publicWsUrl: "https://pre.alchemist-tower.numinia.xyz/ws"
     publicApiUrl: "https://pre.alchemist-tower.numinia.xyz/api"

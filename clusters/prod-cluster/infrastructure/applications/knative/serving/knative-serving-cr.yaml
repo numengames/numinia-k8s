@@ -17,4 +17,7 @@ spec:
       scale-to-zero-pod-retention-period: "60s"
       stable-window: "60s"
     domain:
-      example.org: "" 
+      "numinia.xyz": ""
+      "numen.games": ""
+      "art-unchained.io": ""
+      "activeinference.institute"
