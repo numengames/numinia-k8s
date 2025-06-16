@@ -7,14 +7,16 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
+    awsSecretName: "hyperfy2-numinia-atlantis-library-pro"
     orgName: "numinia"
     appName: "atlantis-library"
     environment: "pro"
-    serviceAccountName: "aws-secret-manager-sa"
+    namespace: numinia
+    serviceAccountName: "numinia"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "sha-ff60462adfee4655cd21660360dbdcf444ed7474"
-    world: "atlantis-library"
+      tag: "feat-full-storage-and-db-support-docker"
+    world: "pro-atlantis-library"
     tlsSecretName: "numinia-tls"
     hostname: "atlantis-library.numinia.xyz"
     storagePath: "/mnt/hyperfy2-persistent-storage"
@@ -22,10 +24,28 @@ data:
     publicApiUrl: "https://atlantis-library.numinia.xyz/api"
     publicAssetsUrl: "https://atlantis-library.numinia.xyz/assets"
     publicMaxUploadSize: "100MB"
+    dbType: "pg"
+    dbPort: "5432"
+    dbName: "postgres"
+    dbSchema: "pro-numinia-atlantis-library"
+    storageType: "aws"
+    s3BucketName: "statics.numinia.xyz"
+    s3Region: "eu-west-1"
+    s3AssetsPrefix: "hyperfy-spaces/numinia/atlantis-library/latest/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numinia/atlantis-library/latest/collections/
+    s3StoragePrefix: hyperfy-spaces/numinia/atlantis-library/latest/storage/
+    cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
-        cpu: "128m"
-        memory: "128Mi"
-      limits:
         cpu: "256m"
-        memory: "256Mi" 
+        memory: "256Mi"
+      limits:
+        cpu: "512m"
+        memory: "512Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: atlantis-library.numinia.xyz
+      namespace: numinia

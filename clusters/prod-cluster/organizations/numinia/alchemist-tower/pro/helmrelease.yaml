@@ -3,8 +3,6 @@ kind: HelmRelease
 metadata:
   name: alchemist-tower-pro
   namespace: numinia
-  annotations:
-    reconcile.fluxcd.io/requestedAt: "1734523452"
 spec:
   interval: 5m
   releaseName: alchemist-tower-pro
@@ -15,11 +13,9 @@ spec:
   upgrade:
     remediation:
       retries: 3
-  driftDetection:
-    mode: enabled
   chart:
     spec:
-      chart: ./clusters/prod-cluster/base/hyperfy2
+      chart: ./clusters/prod-cluster/base/hyperfy2-knative
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -28,4 +24,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: alchemist-tower-pro-values
-      valuesKey: values.yaml 
+      valuesKey: values.yaml

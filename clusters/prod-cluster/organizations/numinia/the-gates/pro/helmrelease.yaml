@@ -3,8 +3,6 @@ kind: HelmRelease
 metadata:
   name: the-gates-pro
   namespace: numinia
-  annotations:
-    reconcile.fluxcd.io/requestedAt: "1734523452"
 spec:
   interval: 5m
   releaseName: the-gates-pro
@@ -17,7 +15,7 @@ spec:
       retries: 3
   chart:
     spec:
-      chart: ./clusters/prod-cluster/base/hyperfy2
+      chart: ./clusters/prod-cluster/base/hyperfy2-knative
       sourceRef:
         kind: GitRepository
         name: flux-system
