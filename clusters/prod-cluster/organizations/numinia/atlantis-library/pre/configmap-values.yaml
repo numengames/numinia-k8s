@@ -31,9 +31,9 @@ data:
     storageType: "aws"
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
-    s3AssetsPrefix: "hyperfy-spaces/numinia/atlantis-library/v1/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numinia/atlantis-library/v1/collections/
-    s3StoragePrefix: hyperfy-spaces/numinia/atlantis-library/v1/storage/
+    s3AssetsPrefix: "hyperfy-spaces/numinia/atlantis-library/dev/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numinia/atlantis-library/dev/collections/
+    s3StoragePrefix: hyperfy-spaces/numinia/atlantis-library/dev/storage/
     cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
