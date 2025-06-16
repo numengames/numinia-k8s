@@ -19,7 +19,7 @@ metadata:
   name: numinia-pre-apps
   namespace: flux-system
 spec:
-  interval: 5m0s
+  interval: 1h
   path: ./clusters/prod-cluster/organizations/numinia/pre-kustomization
   prune: true
   sourceRef:
