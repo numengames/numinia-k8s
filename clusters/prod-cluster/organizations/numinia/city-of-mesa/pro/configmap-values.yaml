@@ -31,9 +31,9 @@ data:
     storageType: "aws"
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
-    s3AssetsPrefix: "hyperfy-spaces/numinia/city-of-mesa/pro/v1/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numinia/city-of-mesa/pro/v1/collections/
-    s3StoragePrefix: hyperfy-spaces/numinia/city-of-mesa/pro/v1/storage/
+    s3AssetsPrefix: "hyperfy-spaces/numinia/city-of-mesa/latest/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numinia/city-of-mesa/latest/collections/
+    s3StoragePrefix: hyperfy-spaces/numinia/city-of-mesa/latest/storage/
     cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
