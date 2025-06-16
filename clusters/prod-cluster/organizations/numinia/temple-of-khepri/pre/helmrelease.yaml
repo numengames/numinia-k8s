@@ -1,11 +1,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: alchemist-tower-pre
+  name: temple-of-khepri-pre
   namespace: numinia-pre
 spec:
   interval: 5m
-  releaseName: alchemist-tower-pre
+  releaseName: temple-of-khepri-pre
   targetNamespace: numinia-pre
   install:
     remediation:
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: alchemist-tower-pre-values
+      name: temple-of-khepri-pre-values
       valuesKey: values.yaml

@@ -1,11 +1,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: alchemist-tower-pre
+  name: lemuria-academy-pre
   namespace: numinia-pre
 spec:
   interval: 5m
-  releaseName: alchemist-tower-pre
+  releaseName: lemuria-academy-pre
   targetNamespace: numinia-pre
   install:
     remediation:
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: alchemist-tower-pre-values
+      name: lemuria-academy-pre-values
       valuesKey: values.yaml
