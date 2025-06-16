@@ -7,14 +7,16 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
+    awsSecretName: "hyperfy2-numinia-the-gates-pro"
     orgName: "numinia"
     appName: "the-gates"
     environment: "pro"
-    serviceAccountName: "aws-secret-manager-sa"
+    namespace: numinia
+    serviceAccountName: "numinia"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "sha-ff60462adfee4655cd21660360dbdcf444ed7474"
-    world: "the-gates"
+      tag: "feat-full-storage-and-db-support-docker"
+    world: "pro-the-gates"
     tlsSecretName: "numinia-tls"
     hostname: "the-gates.numinia.xyz"
     storagePath: "/mnt/hyperfy2-persistent-storage"
@@ -22,10 +24,28 @@ data:
     publicApiUrl: "https://the-gates.numinia.xyz/api"
     publicAssetsUrl: "https://the-gates.numinia.xyz/assets"
     publicMaxUploadSize: "100MB"
+    dbType: "pg"
+    dbPort: "5432"
+    dbName: "postgres"
+    dbSchema: "pro-numinia-the-gates"
+    storageType: "aws"
+    s3BucketName: "statics.numinia.xyz"
+    s3Region: "eu-west-1"
+    s3AssetsPrefix: "hyperfy-spaces/numinia/the-gates/latest/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numinia/the-gates/latest/collections/
+    s3StoragePrefix: hyperfy-spaces/numinia/the-gates/latest/storage/
+    cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
-        cpu: "128m"
-        memory: "128Mi"
-      limits:
         cpu: "256m"
-        memory: "256Mi" 
+        memory: "256Mi"
+      limits:
+        cpu: "512m"
+        memory: "512Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: the-gates.numinia.xyz
+      namespace: numinia

@@ -31,9 +31,9 @@ data:
     storageType: "aws"
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
-    s3AssetsPrefix: "hyperfy-spaces/numinia/temple-of-khepri/v1/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numinia/temple-of-khepri/v1/collections/
-    s3StoragePrefix: hyperfy-spaces/numinia/temple-of-khepri/v1/storage/
+    s3AssetsPrefix: "hyperfy-spaces/numinia/temple-of-khepri/dev/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numinia/temple-of-khepri/dev/collections/
+    s3StoragePrefix: hyperfy-spaces/numinia/temple-of-khepri/dev/storage/
     cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
