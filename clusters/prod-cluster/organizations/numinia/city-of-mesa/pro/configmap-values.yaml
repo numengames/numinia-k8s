@@ -47,5 +47,5 @@ data:
       maxScale: 1
     domainMapping:
       enabled: true
-      hostname: pro.city-of-mesa.numinia.xyz
+      hostname: city-of-mesa.numinia.xyz
       namespace: numinia
