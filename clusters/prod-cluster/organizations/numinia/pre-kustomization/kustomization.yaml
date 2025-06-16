@@ -4,5 +4,18 @@ namespace: numinia-pre
 resources:
   - ../../../base/external-secrets/acme-dns
   - ../age-of-ai/pre
+  - ../agora-plaza/pre
+  - ../akasha-museum/pre
   - ../alchemist-tower/pre
-  - ../city-of-mesa/pre 
+  - ../athenaeum/pre
+  - ../atlantis-library/pre
+  - ../city-of-mesa/pre
+  - ../crimson-tower/pre
+  - ../historical-society/pre
+  - ../house-of-riddles/pre
+  - ../lemuria-academy/pre
+  - ../multiplex/pre
+  - ../ruins-of-numinia/pre
+  - ../steiners-dreams/pre
+  - ../temple-of-khepri/pre
+  - ../the-gates/pre
