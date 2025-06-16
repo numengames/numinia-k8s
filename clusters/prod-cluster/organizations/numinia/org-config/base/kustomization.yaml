@@ -4,4 +4,3 @@ resources:
   - rbac.yaml
   - storage
   - cert.yaml
-  - service-account.yaml
