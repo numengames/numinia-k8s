@@ -6,5 +6,6 @@ resources:
   - namespace.yaml
   - shared-pvc.yaml
   - persistent-volume.yaml
+  - service-account.yaml
 patchesStrategicMerge:
   - cert.yaml

@@ -6,3 +6,4 @@ resources:
   - rbac.yaml
   - storage
   - cert.yaml
+  - overlays/pro/service-account.yaml
