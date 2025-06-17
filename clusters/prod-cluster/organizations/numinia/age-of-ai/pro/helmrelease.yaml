@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: kevinonearth-pre
-  namespace: numen-games-pre
+  name: age-of-ai-pro
+  namespace: numinia
 spec:
   interval: 5m
-  releaseName: kevinonearth-pre
-  targetNamespace: numen-games-pre
+  releaseName: age-of-ai-pro
+  targetNamespace: numinia
   install:
     remediation:
       retries: 3
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: kevinonearth-pre-values
+      name: age-of-ai-pro-values
       valuesKey: values.yaml

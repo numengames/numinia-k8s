@@ -4,7 +4,7 @@ metadata:
   name: numinia-pro-apps
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 5m0s
   path: ./clusters/prod-cluster/organizations/numinia/pro-kustomization
   prune: true
   sourceRef:
