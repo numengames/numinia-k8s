@@ -7,14 +7,16 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
+    awsSecretName: "hyperfy2-numen-games-kevinonearth-pro"
     orgName: "numen-games"
     appName: "kevinonearth"
     environment: "pro"
-    serviceAccountName: "numen-games-aws-secret-manager-sa"
+    namespace: numen-games
+    serviceAccountName: "numen-games"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "sha-ff60462adfee4655cd21660360dbdcf444ed7474"
-    world: "kevinonearth"
+      tag: "feat-full-storage-and-db-support-docker"
+    world: "pro-kevinonearth"
     tlsSecretName: "numen-games-tls"
     hostname: "kevinonearth.numen.games"
     storagePath: "/mnt/hyperfy2-persistent-storage"
@@ -22,10 +24,28 @@ data:
     publicApiUrl: "https://kevinonearth.numen.games/api"
     publicAssetsUrl: "https://kevinonearth.numen.games/assets"
     publicMaxUploadSize: "100MB"
+    dbType: "pg"
+    dbPort: "5432"
+    dbName: "postgres"
+    dbSchema: "pro-numen-games-kevinonearth"
+    storageType: "aws"
+    s3BucketName: "statics.numen.games"
+    s3Region: "eu-west-1"
+    s3AssetsPrefix: "hyperfy-spaces/numen-games/kevinonearth/latest/assets/"
+    s3CollectionsPrefix: hyperfy-spaces/numen-games/kevinonearth/latest/collections/
+    s3StoragePrefix: hyperfy-spaces/numen-games/kevinonearth/latest/storage/
+    cloudfrontUrl: "https://statics.numen.games"
     resources:
       requests:
-        cpu: "125m"
+        cpu: "256m"
         memory: "256Mi"
       limits:
-        cpu: "250m"
-        memory: "512Mi" 
+        cpu: "512m"
+        memory: "512Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: kevinonearth.numen.games
+      namespace: numen-games

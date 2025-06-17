@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: numinia-pro-apps
+  name: numen-games-pro-apps
   namespace: flux-system
 spec:
-  interval: 1h
-  path: ./clusters/prod-cluster/organizations/numinia/pro-kustomization
+  interval: 5m0s
+  path: ./clusters/prod-cluster/organizations/numen-games/pro-kustomization
   prune: true
   sourceRef:
     kind: GitRepository
@@ -16,11 +16,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: numinia-pre-apps
+  name: numen-games-pre-apps
   namespace: flux-system
 spec:
-  interval: 1h
-  path: ./clusters/prod-cluster/organizations/numinia/pre-kustomization
+  interval: 5m0s
+  path: ./clusters/prod-cluster/organizations/numen-games/pre-kustomization
   prune: true
   sourceRef:
     kind: GitRepository
