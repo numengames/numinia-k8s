@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: DomainMapping
+metadata:
+  name: {{ .Values.domainMapping.hostname }}
+  namespace: {{ .Values.namespace | default .Values.orgName }}
+spec:
+  ref:
+    name: eliza-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
+    kind: Service
+    apiVersion: serving.knative.dev/v1
+  tls:
+    secretName: {{ .Values.tlsSecretName }} 
