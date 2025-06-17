@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: pablofm-pre
-  namespace: numen-games-pre
+  name: age-of-ai-pre
+  namespace: numinia-pre
 spec:
   interval: 5m
-  releaseName: pablofm-pre
-  targetNamespace: numen-games-pre
+  releaseName: age-of-ai-pre
+  targetNamespace: numinia-pre
   install:
     remediation:
       retries: 3
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: pablofm-pre-values
+      name: age-of-ai-pre-values
       valuesKey: values.yaml

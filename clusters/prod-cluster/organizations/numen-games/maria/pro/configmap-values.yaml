@@ -7,16 +7,14 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
-    awsSecretName: "hyperfy2-numen-games-maria-pro"
     orgName: "numen-games"
     appName: "maria"
     environment: "pro"
-    namespace: numen-games
-    serviceAccountName: "numen-games"
+    serviceAccountName: "numen-games-aws-secret-manager-sa"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "feat-full-storage-and-db-support-docker"
-    world: "pro-maria"
+      tag: "sha-ff60462adfee4655cd21660360dbdcf444ed7474"
+    world: "maria"
     tlsSecretName: "numen-games-tls"
     hostname: "maria.numen.games"
     storagePath: "/mnt/hyperfy2-persistent-storage"
@@ -24,28 +22,10 @@ data:
     publicApiUrl: "https://maria.numen.games/api"
     publicAssetsUrl: "https://maria.numen.games/assets"
     publicMaxUploadSize: "100MB"
-    dbType: "pg"
-    dbPort: "5432"
-    dbName: "postgres"
-    dbSchema: "pro-numen-games-maria"
-    storageType: "aws"
-    s3BucketName: "statics.numen.games"
-    s3Region: "eu-west-1"
-    s3AssetsPrefix: "hyperfy-spaces/numen-games/maria/latest/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numen-games/maria/latest/collections/
-    s3StoragePrefix: hyperfy-spaces/numen-games/maria/latest/storage/
-    cloudfrontUrl: "https://statics.numen.games"
     resources:
       requests:
-        cpu: "256m"
+        cpu: "125m"
         memory: "256Mi"
       limits:
-        cpu: "512m"
-        memory: "512Mi"
-    autoscaling:
-      minScale: 0
-      maxScale: 1
-    domainMapping:
-      enabled: true
-      hostname: maria.numen.games
-      namespace: numen-games
+        cpu: "250m"
+        memory: "512Mi" 

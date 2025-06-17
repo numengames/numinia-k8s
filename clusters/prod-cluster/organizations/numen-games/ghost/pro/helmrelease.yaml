@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: ghost-pro
   namespace: numen-games
+  annotations:
+    reconcile.fluxcd.io/requestedAt: "1734523452"
 spec:
   interval: 5m
   releaseName: ghost-pro
@@ -15,7 +17,7 @@ spec:
       retries: 3
   chart:
     spec:
-      chart: ./clusters/prod-cluster/base/hyperfy2-knative
+      chart: ./clusters/prod-cluster/base/hyperfy2
       sourceRef:
         kind: GitRepository
         name: flux-system
@@ -24,4 +26,4 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: ghost-pro-values
-      valuesKey: values.yaml
+      valuesKey: values.yaml 
