@@ -7,9 +7,11 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
+    awsSecretName: "eliza-numinia-eliza-pro"
     orgName: "numinia"
     appName: "eliza"
     environment: "pro"
+    namespace: numinia
     serviceAccountName: "aws-secret-manager-sa"
     image:
       repository: "ghcr.io/numengames/numinia-eliza"
@@ -35,6 +37,13 @@ data:
       limits:
         cpu: "500m"
         memory: "1Gi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: eliza.numinia.xyz
+      namespace: numinia
 
 
 

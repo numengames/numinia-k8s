@@ -1,0 +1,118 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: eliza-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.appName }}
+    environment: {{ .Values.environment }}
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "{{ .Values.autoscaling.minScale }}"
+        autoscaling.knative.dev/maxScale: "{{ .Values.autoscaling.maxScale }}"
+    spec:
+      timeoutSeconds: {{ .Values.timeoutSeconds }}
+      serviceAccountName: {{ .Values.serviceAccountName }}
+      containers:
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          ports:
+            - containerPort: {{ .Values.port | default 3000 }}
+          envFrom:
+            - secretRef:
+                name: aws-secrets-eliza-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
+          env:
+            - name: DAEMON_PROCESS
+              value: {{ .Values.daemonProcess | quote }}
+            - name: CHARACTERS_PATH
+              value: {{ .Values.charactersPath | quote }}
+            - name: X_SERVER_URL
+              value: {{ .Values.xServerUrl | quote }}
+            - name: X_AI_MODEL
+              value: {{ .Values.xAIModel | quote }}
+            - name: OLLAMA_SERVER_URL
+              value: {{ .Values.ollamaServerUrl | quote }}
+            - name: DEEPSEEK_API_URL
+              value: {{ .Values.deepseekApiUrl | quote }}
+            - name: RPC_URL
+              value: {{ .Values.rpcUrl | quote }}
+            - name: OLLAMA_MODEL
+              value: {{ .Values.ollamaModel | quote }}
+            - name: OLLAMA_EMBEDDING_MODEL
+              value: {{ .Values.ollamaEmbeddingModel | quote }}
+            - name: SMALL_OLLAMA_MODEL
+              value: {{ .Values.smallOllamaModel | quote }}
+            - name: MEDIUM_OLLAMA_MODEL
+              value: {{ .Values.mediumOllamaModel | quote }}
+            - name: LARGE_OLLAMA_MODEL
+              value: {{ .Values.largeOllamaModel | quote }}
+            - name: OPENROUTER_MODEL
+              value: {{ .Values.openrouterModel | quote }}
+            - name: SMALL_OPENROUTER_MODEL
+              value: {{ .Values.smallOpenrouterModel | quote }}
+            - name: MEDIUM_OPENROUTER_MODEL
+              value: {{ .Values.mediumOpenrouterModel | quote }}
+            - name: LARGE_OPENROUTER_MODEL
+              value: {{ .Values.largeOpenrouterModel | quote }}
+            - name: SMALL_HEURIST_MODEL
+              value: {{ .Values.smallHeuristModel | quote }}
+            - name: MEDIUM_HEURIST_MODEL
+              value: {{ .Values.mediumHeuristModel | quote }}
+            - name: LARGE_HEURIST_MODEL
+              value: {{ .Values.largeHeuristModel | quote }}
+            - name: HEURIST_IMAGE_MODEL
+              value: {{ .Values.heuristImageModel | quote }}
+            - name: SMALL_DEEPSEEK_MODEL
+              value: {{ .Values.smallDeepseekModel | quote }}
+            - name: MEDIUM_DEEPSEEK_MODEL
+              value: {{ .Values.mediumDeepseekModel | quote }}
+            - name: LARGE_DEEPSEEK_MODEL
+              value: {{ .Values.largeDeepseekModel | quote }}
+            - name: ELEVENLABS_MODEL_ID
+              value: {{ .Values.elevenLabsModelId | quote }}
+            - name: ELEVENLABS_VOICE_ID
+              value: {{ .Values.elevenLabsVoiceId | quote }}
+            - name: ELEVENLABS_VOICE_STABILITY
+              value: {{ .Values.elevenLabsVoiceStability | quote }}
+            - name: ELEVENLABS_VOICE_SIMILARITY_BOOST
+              value: {{ .Values.elevenLabsVoiceSimilarityBoost | quote }}
+            - name: ELEVENLABS_VOICE_STYLE
+              value: {{ .Values.elevenLabsVoiceStyle | quote }}
+            - name: ELEVENLABS_VOICE_USE_SPEAKER_BOOST
+              value: {{ .Values.elevenLabsVoiceUseSpeakerBoost | quote }}
+            - name: ELEVENLABS_OPTIMIZE_STREAMING_LATENCY
+              value: {{ .Values.elevenLabsOptimizeStreamingLatency | quote }}
+            - name: ELEVENLABS_OUTPUT_FORMAT
+              value: {{ .Values.elevenLabsOutputFormat | quote }}
+            - name: TWITTER_DRY_RUN
+              value: {{ .Values.twitterDryRun | quote }}
+            - name: TWITTER_USERNAME
+              value: {{ .Values.twitterUsername | quote }}
+            - name: TWITTER_EMAIL
+              value: {{ .Values.twitterEmail | quote }}
+            - name: TWITTER_COOKIES
+              value: {{ .Values.twitterCookies | quote }}
+            - name: POST_INTERVAL_MIN
+              value: {{ .Values.postIntervalMin | quote }}
+            - name: POST_INTERVAL_MAX
+              value: {{ .Values.postIntervalMax | quote }}
+            - name: IMAGE_GEN
+              value: {{ .Values.imageGen | quote }}
+            - name: USE_OPENAI_EMBEDDING
+              value: {{ .Values.useOpenaiEmbedding | quote }}
+            - name: SOL_ADDRESS
+              value: {{ .Values.solAddress | quote }}
+            - name: SLIPPAGE
+              value: {{ .Values.slippage | quote }}
+            - name: BASE_MINT
+              value: {{ .Values.baseMint | quote }}
+            - name: STARKNET_ADDRESS
+              value: {{ .Values.starknetAddress | quote }}
+          resources:
+            requests:
+              memory: {{ .Values.resources.requests.memory | quote }}
+              cpu: {{ .Values.resources.requests.cpu | quote }}
+            limits:
+              memory: {{ .Values.resources.limits.memory | quote }}
+              cpu: {{ .Values.resources.limits.cpu | quote }} 
