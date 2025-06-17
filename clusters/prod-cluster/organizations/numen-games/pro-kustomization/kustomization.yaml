@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: numinia-pro
+resources:
+  - ../pablofm/pro
+  - ../maria/pro
+  - ../kevinonearth/pro
+  - ../ghost/pro
+  - ../experience/pro
+  - ../engage/pro
+  - ../christian/pro
