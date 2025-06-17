@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: christian-pro
-  namespace: numen-games
+  name: engage-pre
+  namespace: numen-games-pre
 spec:
   interval: 5m
-  releaseName: christian-pro
-  targetNamespace: numen-games
+  releaseName: engage-pre
+  targetNamespace: numen-games-pre
   install:
     remediation:
       retries: 3
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: christian-pro-values
+      name: engage-pre-values
       valuesKey: values.yaml
