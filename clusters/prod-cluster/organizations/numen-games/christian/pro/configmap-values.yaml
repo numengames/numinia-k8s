@@ -29,12 +29,12 @@ data:
     dbName: "postgres"
     dbSchema: "pro-numen-games-christian"
     storageType: "aws"
-    s3BucketName: "statics.numen.games"
+    s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
     s3AssetsPrefix: "hyperfy-spaces/numen-games/christian/latest/assets/"
     s3CollectionsPrefix: hyperfy-spaces/numen-games/christian/latest/collections/
     s3StoragePrefix: hyperfy-spaces/numen-games/christian/latest/storage/
-    cloudfrontUrl: "https://statics.numen.games"
+    cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
       requests:
         cpu: "256m"
