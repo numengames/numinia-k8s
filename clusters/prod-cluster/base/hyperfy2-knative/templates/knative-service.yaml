@@ -5,6 +5,7 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Values.appName }}
+    org: {{ .Values.orgName }}
     environment: {{ .Values.environment }}
 spec:
   template:
