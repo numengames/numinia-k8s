@@ -39,12 +39,9 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-numen-games-prod
     solvers:
-    - dns01:
-        acmeDNS:
-          host: acme.numinia.xyz
-          accountSecretRef:
-            name: acme-dns-credentials
-            key: acme-dns-credentials.json
+    - http01:
+        ingress:
+          class: traefik
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
