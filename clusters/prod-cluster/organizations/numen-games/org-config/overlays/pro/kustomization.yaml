@@ -4,3 +4,4 @@ namespace: numen-games
 resources:
   - namespace.yaml
   - service-account.yaml
+  - cert.yaml
