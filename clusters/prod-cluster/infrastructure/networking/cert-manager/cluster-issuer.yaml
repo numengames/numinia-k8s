@@ -37,7 +37,7 @@ spec:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: "notifications@numengames.com"
     privateKeySecretRef:
-      name: letsencrypt-numen-games-prod
+      name: letsencrypt-numen-games
     solvers:
     - http01:
         ingress:

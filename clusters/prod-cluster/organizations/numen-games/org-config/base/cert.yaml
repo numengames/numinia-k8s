@@ -5,5 +5,5 @@ metadata:
 spec:
   secretName: numen-games-tls
   issuerRef:
-    name: letsencrypt-numen-games-prod
+    name: letsencrypt-numen-games
     kind: ClusterIssuer
