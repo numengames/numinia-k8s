@@ -27,7 +27,7 @@ data:
     dbType: "pg"
     dbPort: "5432"
     dbName: "postgres"
-    dbSchema: "pre-numen-games-engage"
+    dbSchema: "pre-numengames-engage"
     storageType: "aws"
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
