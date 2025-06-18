@@ -3,10 +3,12 @@ kind: Kustomization
 namespace: numen-games-pre
 resources:
   - ../org-config/overlays/pre
-  - ../pablofm/pre
-  - ../maria/pre
-  - ../kevinonearth/pre
-  - ../ghost/pre
-  - ../experience/pre
-  - ../engage/pre
   - ../christian/pre
+  - ../engage/pre
+  - ../experience/pre
+  - ../ghost/pre
+  - ../kevinonearth/pre
+  - ../maria/pre
+  - ../pablofm/pre
+  - ../r3s3t/pre
+  - ../training/pre
