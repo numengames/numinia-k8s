@@ -5,7 +5,6 @@ metadata:
   name: {{ .Values.domainMapping.hostname }}
   namespace: {{ .Values.namespace | default .Values.orgName }}
   annotations:
-    networking.knative.dev/disableAutoTLS: "true"
     kourier.knative.dev/disable-http2: "true"
 spec:
   ref:
