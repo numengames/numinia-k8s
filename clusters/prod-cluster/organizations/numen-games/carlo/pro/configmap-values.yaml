@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: carlo-pro-values
+  namespace: numen-games
+  annotations:
+    config-version: "1.0.0"
+data:
+  values.yaml: |
+    awsSecretName: "hyperfy2-numen-games-carlo-pro"
+    orgName: "numen-games"
+    appName: "carlo"
+    environment: "pro"
+    namespace: numen-games
+    serviceAccountName: "numen-games"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "feat-full-storage-and-db-support-docker"
+    world: "pro-carlo"
+    tlsSecretName: "numen-games-tls"
+    hostname: "carlo.numen.games"
+    storagePath: "/mnt/hyperfy2-persistent-storage"
+    publicWsUrl: "https://carlo.numen.games/ws"
+    publicApiUrl: "https://carlo.numen.games/api"
+    publicAssetsUrl: "https://carlo.numen.games/assets"
+    publicMaxUploadSize: "100MB"
+    dbType: "pg"
+    dbPort: "5432"
+    dbName: "postgres"
+    dbSchema: "pro-numengames-carlo"
+    storageType: "aws"
+    s3BucketName: "statics.numinia.xyz"
+    s3Region: "eu-west-1"
+    s3AssetsPrefix: "hyperfy-spaces/numen-games/carlo/latest/assets/"
+    s3CollectionsPrefix: "hyperfy-spaces/numen-games/collections/latest/"
+    s3StoragePrefix: "hyperfy-spaces/numen-games/carlo/latest/storage/"
+    cloudfrontUrl: "https://statics.numinia.xyz"
+    resources:
+      requests:
+        cpu: "256m"
+        memory: "256Mi"
+      limits:
+        cpu: "512m"
+        memory: "512Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: carlo.numen.games
+      namespace: numen-games
