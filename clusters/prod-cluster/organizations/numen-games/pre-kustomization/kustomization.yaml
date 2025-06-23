@@ -4,6 +4,7 @@ namespace: numen-games-pre
 resources:
   - ../org-config/overlays/pre
   - ../christian/pre
+  - ../carlo/pre
   - ../engage/pre
   - ../experience/pre
   - ../ghost/pre
