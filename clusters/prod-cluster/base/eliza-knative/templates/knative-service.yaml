@@ -21,7 +21,7 @@ spec:
             - containerPort: {{ .Values.port | default 3000 }}
           envFrom:
             - secretRef:
-                name: aws-secrets-eliza-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
+              name: aws-secrets-eliza-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
           env:
             - name: DAEMON_PROCESS
               value: {{ .Values.daemonProcess | quote }}
