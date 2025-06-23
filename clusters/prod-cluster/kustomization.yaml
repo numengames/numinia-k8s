@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   - flux-system
   - infrastructure-kustomizations.yaml
-  - organizations.yaml 
+  - organizations/numen-games
+  - organizations/numinia
