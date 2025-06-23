@@ -32,7 +32,7 @@ data:
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
     s3AssetsPrefix: "hyperfy-spaces/numen-games/ghost/latest/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numen-games/ghost/latest/collections/
+    s3CollectionsPrefix: hyperfy-spaces/numen-games/collections/latest/
     s3StoragePrefix: hyperfy-spaces/numen-games/ghost/latest/storage/
     cloudfrontUrl: "https://statics.numinia.xyz"
     resources:

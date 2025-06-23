@@ -32,7 +32,7 @@ data:
     s3BucketName: "statics.numinia.xyz"
     s3Region: "eu-west-1"
     s3AssetsPrefix: "hyperfy-spaces/numinia/crimson-tower/dev/assets/"
-    s3CollectionsPrefix: hyperfy-spaces/numinia/crimson-tower/dev/collections/
+    s3CollectionsPrefix: hyperfy-spaces/numinia/collections/dev
     s3StoragePrefix: hyperfy-spaces/numinia/crimson-tower/dev/storage/
     cloudfrontUrl: "https://statics.numinia.xyz"
     resources:
