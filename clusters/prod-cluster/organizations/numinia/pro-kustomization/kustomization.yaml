@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: numinia
 resources:
   - ../org-config/overlays/pro
-  - ../eliza
   - ../age-of-ai/pro
   - ../agora-plaza/pro
   - ../akasha-museum/pro
