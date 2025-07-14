@@ -23,7 +23,7 @@ data:
     publicWsUrl: "https://city-of-mesa.numinia.xyz/ws"
     publicApiUrl: "https://city-of-mesa.numinia.xyz/api"
     publicAssetsUrl: "https://city-of-mesa.numinia.xyz/assets"
-    publicMaxUploadSize: "100MB"
+    publicMaxUploadSize: "2000MB"
     dbType: "pg"
     dbPort: "5432"
     dbName: "postgres"
