@@ -1,0 +1,51 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nes-pre-values
+  namespace: numen-games-pre
+  annotations:
+    config-version: "1.0.0"
+data:
+  values.yaml: |
+    awsSecretName: "hyperfy2-numen-games-nes-pre"
+    orgName: "numen-games"
+    appName: "nes"
+    environment: "pre"
+    namespace: numen-games-pre
+    serviceAccountName: "numen-games-pre"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "feat-full-storage-and-db-support-docker"
+    world: "pre-nes"
+    tlsSecretName: "numen-games-tls"
+    hostname: "pre.nes.numen.games"
+    storagePath: "/mnt/hyperfy2-persistent-storage"
+    publicWsUrl: "https://pre.nes.numen.games/ws"
+    publicApiUrl: "https://pre.nes.numen.games/api"
+    publicAssetsUrl: "https://pre.nes.numen.games/assets"
+    publicMaxUploadSize: "100MB"
+    dbType: "pg"
+    dbPort: "5432"
+    dbName: "postgres"
+    dbSchema: "pre-numengames-nes"
+    storageType: "aws"
+    s3BucketName: "statics.numinia.xyz"
+    s3Region: "eu-west-1"
+    s3AssetsPrefix: "hyperfy-spaces/numen-games/nes/dev/assets/"
+    s3CollectionsPrefix: "hyperfy-spaces/numen-games/collections/dev/"
+    s3StoragePrefix: "hyperfy-spaces/numen-games/nes/dev/storage/"
+    cloudfrontUrl: "https://statics.numinia.xyz"
+    resources:
+      requests:
+        cpu: "256m"
+        memory: "256Mi"
+      limits:
+        cpu: "1024m"
+        memory: "2048Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: pre.nes.numen.games
+      namespace: numen-games-pre
