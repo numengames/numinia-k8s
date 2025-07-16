@@ -23,7 +23,7 @@ data:
     publicWsUrl: "https://backfund.numen.games/ws"
     publicApiUrl: "https://backfund.numen.games/api"
     publicAssetsUrl: "https://backfund.numen.games/assets"
-    publicMaxUploadSize: "100MB"
+    publicMaxUploadSize: "1MB"
     dbType: "pg"
     dbPort: "5432"
     dbName: "postgres"
@@ -40,8 +40,8 @@ data:
         cpu: "256m"
         memory: "256Mi"
       limits:
-        cpu: "512m"
-        memory: "512Mi"
+        cpu: "1024m"
+        memory: "2048Mi"
     autoscaling:
       minScale: 0
       maxScale: 1
