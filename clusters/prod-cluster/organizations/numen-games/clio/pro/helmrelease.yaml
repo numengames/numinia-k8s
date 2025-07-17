@@ -1,11 +1,11 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: carlo-pro
+  name: clio-pro
   namespace: numen-games
 spec:
   interval: 5m
-  releaseName: carlo-pro
+  releaseName: clio-pro
   targetNamespace: numen-games
   install:
     remediation:
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: carlo-pro-values
+      name: clio-pro-values
       valuesKey: values.yaml
