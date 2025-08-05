@@ -5,3 +5,4 @@ resources:
   - infrastructure-kustomizations.yaml
   - organizations/numen-games
   - organizations/numinia
+  - organizations/active-inference
