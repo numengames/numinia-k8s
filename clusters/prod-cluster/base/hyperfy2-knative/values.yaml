@@ -10,18 +10,16 @@ image:
   repository: "ghcr.io/numengames/numinia-hyperfy2"
   tag: "latest"
 
-port: "3000"
 world: "world"
-tlsSecretName: ""
+port: "3000"
 saveInterval: "30"
-commitHash: "commit-hash"
-publicMaxUploadSize: "100"
 publicPlayerCollision: "true"
+publicMaxUploadSize: "12"
 publicWsUrl: "https://domain.com/ws"
 publicApiUrl: "https://domain.com/api"
-hostname: "app-name.org-name.example.com"
-publicAssetsUrl: "https://domain.com/assets"
-storagePath: "/mnt/hyperfy2-persistent-storage/app-name"
+assets: "s3"
+assetsBaseUrl: "https://domain.com/assets"
+clean: "false"
 
 resources:
   requests:
