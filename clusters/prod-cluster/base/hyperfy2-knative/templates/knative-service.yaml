@@ -24,46 +24,26 @@ spec:
             - secretRef:
                 name: aws-secrets-hyperfy2-{{ .Values.orgName | default "default-org" }}-{{ .Values.appName | default "default-app" }}-{{ .Values.environment | default "pro" }}
           env:
-            - name: SAVE_INTERVAL
-              value: {{ .Values.saveInterval | default "30" | quote }}
             - name: WORLD
               value: {{ .Values.world | quote }}
-            - name: STORAGE_PATH
-              value: {{ .Values.storagePath | quote }}
-            - name: COMMIT_HASH
-              value: {{ .Values.commitHash | quote }}
+            - name: PORT
+              value: {{ .Values.port | default 3000 | quote }}
+            - name: SAVE_INTERVAL
+              value: {{ .Values.saveInterval | default "30" | quote }}
+            - name: PUBLIC_PLAYER_COLLISION
+              value: {{ .Values.publicPlayerCollision | quote }}
+            - name: PUBLIC_MAX_UPLOAD_SIZE
+              value: {{ .Values.publicMaxUploadSize | default "12" | quote }}
             - name: PUBLIC_WS_URL
               value: {{ .Values.publicWsUrl | quote }}
             - name: PUBLIC_API_URL
               value: {{ .Values.publicApiUrl | quote }}
-            - name: PUBLIC_ASSETS_URL
-              value: {{ .Values.publicAssetsUrl | quote }}
-            - name: PUBLIC_MAX_UPLOAD_SIZE
-              value: {{ .Values.publicMaxUploadSize | quote }}
-            - name: PUBLIC_PLAYER_COLLISION
-              value: {{ .Values.publicPlayerCollision | quote }}
-            - name: DB_TYPE
-              value: {{ .Values.dbType | default "postgres" | quote }}
-            - name: DB_PORT
-              value: {{ .Values.dbPort | default "5432" | quote }}
-            - name: DB_NAME
-              value: {{ .Values.dbName | default "hyperfy2" | quote }}
-            - name: DB_SCHEMA
-              value: {{ .Values.dbSchema | default "public" | quote }}
-            - name: STORAGE_TYPE
-              value: {{ .Values.storageType | default "local" | quote }}
-            - name: S3_BUCKET_NAME
-              value: {{ .Values.s3BucketName | default "hyperfy2-storage" | quote }}
-            - name: S3_REGION
-              value: {{ .Values.s3Region | default "us-east-1" | quote }}
-            - name: S3_ASSETS_PREFIX
-              value: {{ .Values.s3AssetsPrefix | default "assets" | quote }}
-            - name: S3_COLLECTIONS_PREFIX
-              value: {{ .Values.s3CollectionsPrefix | default "collections" | quote }}
-            - name: S3_STORAGE_PREFIX
-              value: {{ .Values.s3StoragePrefix | default "storage" | quote }}
-            - name: CLOUDFRONT_URL
-              value: {{ .Values.cloudfrontUrl | default "https://d1234567890.cloudfront.net" | quote }}
+            - name: ASSETS
+              value: {{ .Values.assets | default "s3" | quote }}
+            - name: ASSETS_BASE_URL
+              value: {{ .Values.assetsBaseUrl | quote }}
+            - name: CLEAN
+              value: {{ .Values.clean | default false | quote }}
           resources:
             requests:
               memory: {{ .Values.resources.requests.memory | quote }}
