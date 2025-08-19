@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-athenaeum"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.athenaeum.numinia.xyz/ws"
+    publicWsUrl: "wss://pre.athenaeum.numinia.xyz/ws"
     publicApiUrl: "https://pre.athenaeum.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/athenaeum/dev/assets"
     clean: "true"

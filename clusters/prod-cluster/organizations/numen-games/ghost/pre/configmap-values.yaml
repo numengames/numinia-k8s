@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-ghost"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.ghost.numen.games/ws"
+    publicWsUrl: "wss://pre.ghost.numen.games/ws"
     publicApiUrl: "https://pre.ghost.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/ghost/dev/assets"
     clean: "true"

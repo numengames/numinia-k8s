@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-lemuria-academy"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.lemuria-academy.numinia.xyz/ws"
+    publicWsUrl: "wss://pre.lemuria-academy.numinia.xyz/ws"
     publicApiUrl: "https://pre.lemuria-academy.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/lemuria-academy/dev/assets"
     clean: "true"

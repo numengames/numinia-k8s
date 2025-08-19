@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-mab"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.mab.numen.games/ws"
+    publicWsUrl: "wss://pre.mab.numen.games/ws"
     publicApiUrl: "https://pre.mab.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/mab/dev/assets"
     clean: "true"

@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-training"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.training.numen.games/ws"
+    publicWsUrl: "wss://pre.training.numen.games/ws"
     publicApiUrl: "https://pre.training.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/training/dev/assets"
     clean: "true"

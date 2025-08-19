@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-pablofm"
     publicMaxUploadSize: "2000" 
-    publicWsUrl: "ws://pre.pablofm.numen.games/ws"
+    publicWsUrl: "wss://pre.pablofm.numen.games/ws"
     publicApiUrl: "https://pre.pablofm.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/pablofm/dev/assets"
     clean: "true"

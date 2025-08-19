@@ -19,7 +19,7 @@ data:
     world: "pre-alchemist-tower"
     publicMaxUploadSize: "2000"
     publicApiUrl: "https://pre.alchemist-tower.numinia.xyz/api"
-    publicWsUrl: "ws://pre.alchemist-tower.numinia.xyz/ws"
+    publicWsUrl: "wss://pre.alchemist-tower.numinia.xyz/ws"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/alchemist-tower/dev/assets"
     clean: "true"
     tlsSecretName: "numinia-tls"

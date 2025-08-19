@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-spinosound"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.spinosound.numen.games/ws"
+    publicWsUrl: "wss://pre.spinosound.numen.games/ws"
     publicApiUrl: "https://pre.spinosound.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/spinosound/dev/assets"
     clean: "true"

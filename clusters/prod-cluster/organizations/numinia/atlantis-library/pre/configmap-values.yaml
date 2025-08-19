@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-atlantis-library"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.atlantis-library.numinia.xyz/ws"
+    publicWsUrl: "wss://pre.atlantis-library.numinia.xyz/ws"
     publicApiUrl: "https://pre.atlantis-library.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/atlantis-library/dev/assets"
     clean: "true"

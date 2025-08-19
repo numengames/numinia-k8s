@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-akasha-museum"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.akasha-museum.numinia.xyz/ws"
+    publicWsUrl: "wss://pre.akasha-museum.numinia.xyz/ws"
     publicApiUrl: "https://pre.akasha-museum.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/akasha-museum/dev/assets"
     clean: "true"

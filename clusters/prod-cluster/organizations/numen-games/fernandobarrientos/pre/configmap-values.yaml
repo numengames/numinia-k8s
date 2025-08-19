@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-fernandobarrientos"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "ws://pre.fernandobarrientos.numen.games/ws"
+    publicWsUrl: "wss://pre.fernandobarrientos.numen.games/ws"
     publicApiUrl: "https://pre.fernandobarrientos.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/fernandobarrientos/dev/assets"
     clean: "true"
