@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-carlo"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.carlo.numen.games/ws"
+    publicWsUrl: "ws://pre.carlo.numen.games/ws"
     publicApiUrl: "https://pre.carlo.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/carlo/dev/assets"
     clean: "true"

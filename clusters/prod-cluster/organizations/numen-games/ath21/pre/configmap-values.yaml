@@ -18,7 +18,7 @@ data:
       tag: "feat-full-storage-and-db-support-docker"
     world: "pre-ath21"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.ath21.numen.games/ws"
+    publicWsUrl: "ws://pre.ath21.numen.games/ws"
     publicApiUrl: "https://pre.ath21.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/ath21/dev/assets"
     clean: "true"

@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-city-of-mesa"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.city-of-mesa.numinia.xyz/ws"
+    publicWsUrl: "ws://pre.city-of-mesa.numinia.xyz/ws"
     publicApiUrl: "https://pre.city-of-mesa.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/city-of-mesa/dev/assets"
     clean: "true"

@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-curiocards"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.curiocards.numen.games/ws"
+    publicWsUrl: "ws://pre.curiocards.numen.games/ws"
     publicApiUrl: "https://pre.curiocards.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/curiocards/dev/assets"
     clean: "true"

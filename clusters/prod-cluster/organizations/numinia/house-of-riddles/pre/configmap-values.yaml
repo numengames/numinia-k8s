@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-house-of-riddles"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.house-of-riddles.numinia.xyz/ws"
+    publicWsUrl: "ws://pre.house-of-riddles.numinia.xyz/ws"
     publicApiUrl: "https://pre.house-of-riddles.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/house-of-riddles/dev/assets"
     clean: "true"

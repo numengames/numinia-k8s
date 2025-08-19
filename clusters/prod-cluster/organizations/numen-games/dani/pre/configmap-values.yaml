@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-dani"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.dani.numen.games/ws"
+    publicWsUrl: "ws://pre.dani.numen.games/ws"
     publicApiUrl: "https://pre.dani.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/dani/dev/assets"
     clean: "true"

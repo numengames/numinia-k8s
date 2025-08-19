@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-the-gates"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.the-gates.numinia.xyz/ws"
+    publicWsUrl: "ws://pre.the-gates.numinia.xyz/ws"
     publicApiUrl: "https://pre.the-gates.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/the-gates/dev/assets"
     clean: "true"

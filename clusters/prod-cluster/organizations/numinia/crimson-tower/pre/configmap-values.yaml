@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-crimson-tower"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.crimson-tower.numinia.xyz/ws"
+    publicWsUrl: "ws://pre.crimson-tower.numinia.xyz/ws"
     publicApiUrl: "https://pre.crimson-tower.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/crimson-tower/dev/assets"
     clean: "true"

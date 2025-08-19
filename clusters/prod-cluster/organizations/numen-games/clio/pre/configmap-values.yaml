@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-clio"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.clio.numen.games/ws"
+    publicWsUrl: "ws://pre.clio.numen.games/ws"
     publicApiUrl: "https://pre.clio.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/clio/dev/assets"
     clean: "true"

@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-argent"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.argent.numen.games/ws"
+    publicWsUrl: "ws://pre.argent.numen.games/ws"
     publicApiUrl: "https://pre.argent.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/argent/dev/assets"
     clean: "true"

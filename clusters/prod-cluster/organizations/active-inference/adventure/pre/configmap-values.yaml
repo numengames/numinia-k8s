@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-adventure"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.adventure.activeinference.institute/ws"
+    publicWsUrl: "ws://pre.adventure.activeinference.institute/ws"
     publicApiUrl: "https://pre.adventure.activeinference.institute/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/active-inference/adventure/dev/assets"
     clean: "true"

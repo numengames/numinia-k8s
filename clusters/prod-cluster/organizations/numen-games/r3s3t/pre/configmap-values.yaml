@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-r3s3t"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.r3s3t.numen.games/ws"
+    publicWsUrl: "ws://pre.r3s3t.numen.games/ws"
     publicApiUrl: "https://pre.r3s3t.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/r3s3t/dev/assets"
     clean: "true"

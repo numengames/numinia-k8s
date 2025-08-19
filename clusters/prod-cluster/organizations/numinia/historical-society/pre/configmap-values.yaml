@@ -18,7 +18,7 @@ data:
       tag: "dev"
     world: "pre-historical-society"
     publicMaxUploadSize: "2000"
-    publicWsUrl: "https://pre.historical-society.numinia.xyz/ws"
+    publicWsUrl: "ws://pre.historical-society.numinia.xyz/ws"
     publicApiUrl: "https://pre.historical-society.numinia.xyz/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numinia/historical-society/dev/assets"
     clean: "true"
