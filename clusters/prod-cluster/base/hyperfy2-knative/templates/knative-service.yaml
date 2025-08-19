@@ -26,8 +26,6 @@ spec:
           env:
             - name: WORLD
               value: {{ .Values.world | quote }}
-            - name: PORT
-              value: {{ .Values.port | default 3000 | quote }}
             - name: SAVE_INTERVAL
               value: {{ .Values.saveInterval | default "30" | quote }}
             - name: PUBLIC_PLAYER_COLLISION

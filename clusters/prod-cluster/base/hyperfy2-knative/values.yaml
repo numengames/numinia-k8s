@@ -11,7 +11,6 @@ image:
   tag: "latest"
 
 world: "world"
-port: "3000"
 saveInterval: "30"
 publicPlayerCollision: "true"
 publicMaxUploadSize: "12"
