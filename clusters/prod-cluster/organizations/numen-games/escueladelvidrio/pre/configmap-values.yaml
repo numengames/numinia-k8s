@@ -15,7 +15,7 @@ data:
     serviceAccountName: "numen-games-pre"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
+      tag: "sha-dec02565b2bd6aa6517ebacc881a3117ce98e66b"
     world: "pre-escueladelvidrio"
     publicMaxUploadSize: "2000"
     publicWsUrl: "wss://pre.escueladelvidrio.numen.games/ws"
