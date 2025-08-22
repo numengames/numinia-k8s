@@ -6,6 +6,7 @@ metadata:
   namespace: {{ .Values.namespace | default .Values.orgName }}
   annotations:
     kourier.knative.dev/disable-http2: "true"
+    networking.knative.dev/default-external-scheme: "https"
 spec:
   ref:
     name: hyperfy2-{{ .Values.orgName }}-{{ .Values.appName }}-{{ .Values.environment }}
