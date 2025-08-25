@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: world-pro-values
+  namespace: r3s3t
+  annotations:
+    config-version: "1.0.0"
+data:
+  values.yaml: |
+    awsSecretName: "hyperfy2-r3s3t-world-pro"
+    orgName: "r3s3t"
+    appName: "world"
+    environment: "pro"
+    namespace: r3s3t
+    serviceAccountName: "r3s3t"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "dev"
+    world: "pro-world"
+    publicMaxUploadSize: "1"
+    publicWsUrl: "wss://world.r3s3t.xyz/ws"
+    publicApiUrl: "https://world.r3s3t.xyz/api"
+    assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/r3s3t/world/latest/assets"
+    clean: "true"
+    tlsSecretName: "r3s3t-tls"
+    resources:
+      requests:
+        cpu: "256m"
+        memory: "256Mi"
+      limits:
+        cpu: "512m"
+        memory: "512Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: world.r3s3t.xyz
+      namespace: r3s3t
