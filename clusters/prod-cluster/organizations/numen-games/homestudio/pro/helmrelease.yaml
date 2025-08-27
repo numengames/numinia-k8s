@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: homestudios-pre
-  namespace: numen-games-pre
+  name: homestudio-pro
+  namespace: numen-games
 spec:
   interval: 5m
-  releaseName: homestudios-pre
-  targetNamespace: numen-games-pre
+  releaseName: homestudio-pro
+  targetNamespace: numen-games
   install:
     remediation:
       retries: 3
@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: homestudios-pre-values
+      name: homestudio-pro-values
       valuesKey: values.yaml
