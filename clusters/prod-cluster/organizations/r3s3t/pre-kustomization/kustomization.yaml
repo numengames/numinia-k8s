@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: r3s3t-pre
 resources:
   - ../org-config/overlays/pre
-  - ../vp/pre
+  - ../wp/pre
   - ../vic/pre
   - ../world/pre

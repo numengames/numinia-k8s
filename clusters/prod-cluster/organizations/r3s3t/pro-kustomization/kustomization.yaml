@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: r3s3t
 resources:
   - ../org-config/overlays/pro
-  - ../vp/pro
+  - ../wp/pro
   - ../vic/pro
   - ../world/pro
