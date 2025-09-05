@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: wp-pre-values
+      name: wp-r3s3t-pre-values
       valuesKey: values.yaml

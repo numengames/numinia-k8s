@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: wp-pro-values
+      name: wp-r3s3t-pro-values
       valuesKey: values.yaml

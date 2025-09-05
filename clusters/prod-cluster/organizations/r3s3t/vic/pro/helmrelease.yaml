@@ -23,5 +23,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: vic-pro-values
+      name: vic-r3s3t-pro-values
       valuesKey: values.yaml

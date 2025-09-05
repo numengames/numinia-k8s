@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: world-pro-values
+  name: world-r3s3t-pro-values
   namespace: r3s3t
   annotations:
     config-version: "1.0.0"
