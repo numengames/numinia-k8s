@@ -7,16 +7,16 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
-    awsSecretName: "hyperfy2-r3s3t-pre"
+    awsSecretName: "hyperfy2-r3s3t-vic-pre"
     orgName: "r3s3t"
-    appName: "r3s3t"
+    appName: "vic"
     environment: "pre"
     namespace: r3s3t-pre
     serviceAccountName: "r3s3t-pre"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
       tag: "dev"
-    world: "pre-r3s3t"
+    world: "pre-vic"
     publicMaxUploadSize: "2000"
     publicWsUrl: "wss://pre.vic.r3s3t.xyz/ws"
     publicApiUrl: "https://pre.vic.r3s3t.xyz/api"
