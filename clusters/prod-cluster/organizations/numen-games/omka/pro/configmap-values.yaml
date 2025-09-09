@@ -20,7 +20,7 @@ data:
     publicMaxUploadSize: "1"
     publicWsUrl: "wss://omka.numen.games/ws"
     publicApiUrl: "https://omka.numen.games/api"
-    assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/omka/latest/assets"
+    assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/Omka/latest/assets"
     clean: "true"
     tlsSecretName: "numen-games-tls"
     resources:
