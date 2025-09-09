@@ -7,7 +7,7 @@ metadata:
     config-version: "1.0.0"
 data:
   values.yaml: |
-    awsSecretName: "hyperfy2-numen-games-omka-pre"
+    awsSecretName: "hyperfy2-numen-games-Omka-pre"
     orgName: "numen-games"
     appName: "omka"
     environment: "pre"
