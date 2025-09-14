@@ -15,7 +15,7 @@ data:
     serviceAccountName: "numen-games-pre"
     image:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "feat-full-storage-and-db-support-docker"
+      tag: "dev"
     world: "pre-ath21"
     publicMaxUploadSize: "2000"
     publicWsUrl: "wss://pre.ath21.numen.games/ws"
