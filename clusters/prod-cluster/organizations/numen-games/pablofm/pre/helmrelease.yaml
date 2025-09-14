@@ -18,10 +18,10 @@ spec:
       chart: ./clusters/prod-cluster/base/hyperfy2-knative
       sourceRef:
         kind: GitRepository
-        name: flux-system-v0.4.0
+        name: flux-system-v0.4.1
         namespace: flux-system
       interval: 1m
-      version: "0.4.0"
+      version: "0.4.1"
   valuesFrom:
     - kind: ConfigMap
       name: pablofm-pre-values

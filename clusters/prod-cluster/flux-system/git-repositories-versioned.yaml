@@ -1,10 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: flux-system-v0.4.0
+  name: flux-system-v0.4.1
   namespace: flux-system
 spec:
   interval: 1m0s
   ref:
-    tag: v0.4.0
+    tag: v0.4.1
   url: https://github.com/numengames/numinia-k8s.git
