@@ -13,9 +13,6 @@ data:
     environment: "pro"
     namespace: numen-games
     serviceAccountName: "numen-games"
-    image:
-      repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
     world: "pro-pablofm"
     publicMaxUploadSize: "1"
     publicWsUrl: "wss://pablofm.numen.games/ws"
