@@ -13,9 +13,6 @@ data:
     environment: "pro"
     namespace: numen-games
     serviceAccountName: "numen-games"
-    image:
-      repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
     world: "pro-tetuanvalley"
     tlsSecretName: "numen-games-tls"
     publicMaxUploadSize: "1"
