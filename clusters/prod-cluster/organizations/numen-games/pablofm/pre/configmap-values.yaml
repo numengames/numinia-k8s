@@ -25,8 +25,8 @@ data:
         cpu: "256m"
         memory: "256Mi"
       limits:
-        cpu: "512m"
-        memory: "1024Mi"
+        cpu: "2048m"
+        memory: "4096Mi"
     autoscaling:
       minScale: 0
       maxScale: 1
