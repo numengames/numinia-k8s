@@ -22,8 +22,8 @@ data:
     tlsSecretName: "numen-games-tls"
     resources:
       requests:
-        cpu: "256m"
-        memory: "256Mi"
+        cpu: "512m"
+        memory: "512Mi"
       limits:
         cpu: "2048m"
         memory: "4096Mi"
