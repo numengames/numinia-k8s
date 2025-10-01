@@ -42,6 +42,10 @@ spec:
               value: {{ .Values.assetsBaseUrl | quote }}
             - name: CLEAN
               value: {{ .Values.clean | default false | quote }}
+            - name: COLLECTIONS
+              value: {{ .Values.collections | default "s3" | quote }}
+            - name: COLLECTIONS_BASE_URL
+              value: {{ .Values.collectionsBaseUrl | quote }}
           resources:
             requests:
               memory: {{ .Values.resources.requests.memory | quote }}

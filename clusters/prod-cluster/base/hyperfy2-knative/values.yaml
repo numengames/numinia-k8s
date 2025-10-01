@@ -8,7 +8,7 @@ namespace: default
 
 image:
   repository: "ghcr.io/numengames/numinia-hyperfy2"
-  tag: "sha-f7701777367afbc4e2badaf8764fd86dca3b7178"
+  tag: "sha-5091ad9f08234d7342d14f9f0beb175bf1c5d8fc"
 
 world: "world"
 saveInterval: "30"
@@ -18,6 +18,8 @@ publicWsUrl: "https://domain.com/ws"
 publicApiUrl: "https://domain.com/api"
 assets: "s3"
 assetsBaseUrl: "https://domain.com/assets"
+collections: "s3"
+collectionsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/collections/dev"
 clean: "false"
 
 resources:

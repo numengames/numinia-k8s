@@ -18,8 +18,12 @@ data:
     publicWsUrl: "wss://pre.mmerge.numen.games/ws"
     publicApiUrl: "https://pre.mmerge.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/mmerge/dev/assets"
+    collectionsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/collections/dev"
     clean: "true"
     tlsSecretName: "numen-games-tls"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "sha-5091ad9f08234d7342d14f9f0beb175bf1c5d8fc"
     resources:
       requests:
         cpu: "512m"
