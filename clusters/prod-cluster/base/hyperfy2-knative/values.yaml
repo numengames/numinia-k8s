@@ -8,7 +8,7 @@ namespace: default
 
 image:
   repository: "ghcr.io/numengames/numinia-hyperfy2"
-  tag: "dev"
+  tag: "sha-f7701777367afbc4e2badaf8764fd86dca3b7178"
 
 world: "world"
 saveInterval: "30"
