@@ -13,9 +13,6 @@ data:
     environment: "pro"
     namespace: r3s3t
     serviceAccountName: "r3s3t"
-    image:
-      repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
     world: "pro-wp"
     publicMaxUploadSize: "1"
     publicWsUrl: "wss://wp.r3s3t.xyz/ws"

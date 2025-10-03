@@ -21,9 +21,6 @@ data:
     collectionsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/collections/dev"
     clean: "true"
     tlsSecretName: "numen-games-tls"
-    image:
-      repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
     resources:
       requests:
         cpu: "512m"

@@ -13,9 +13,6 @@ data:
     environment: "pro"
     namespace: r3s3t
     serviceAccountName: "r3s3t"
-    image:
-      repository: "ghcr.io/numengames/numinia-hyperfy2"
-      tag: "dev"
     world: "pro-vic"
     publicMaxUploadSize: "1"
     publicWsUrl: "wss://vic.r3s3t.xyz/ws"
