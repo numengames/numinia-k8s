@@ -1,0 +1,28 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: juliaux-pro
+  namespace: numen-games
+spec:
+  interval: 5m
+  releaseName: juliaux-pro
+  targetNamespace: numen-games
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  chart:
+    spec:
+      chart: ./clusters/prod-cluster/base/hyperfy2-knative
+      sourceRef:
+        kind: GitRepository
+        name: flux-system-v0.4.7
+        namespace: flux-system
+      interval: 1m
+      version: "0.4.7"
+  valuesFrom:
+    - kind: ConfigMap
+      name: juliaux-pro-values
+      valuesKey: values.yaml
