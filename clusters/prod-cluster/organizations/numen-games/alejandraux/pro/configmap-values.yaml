@@ -18,7 +18,7 @@ data:
     publicWsUrl: "wss://alejandraux.numen.games/ws"
     publicApiUrl: "https://alejandraux.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/alejandraux/latest/assets"
-    collectionsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/collections/dev"
+    collectionsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/collections/latest"
     clean: "true"
     tlsSecretName: "numen-games-tls"
     resources:
