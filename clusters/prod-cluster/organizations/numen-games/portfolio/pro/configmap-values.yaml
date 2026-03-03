@@ -17,7 +17,7 @@ data:
       repository: "ghcr.io/numengames/numinia-hyperfy2"
       tag: "dev"
     world: "pro-portfolio"
-    publicMaxUploadSize: "1"
+    publicMaxUploadSize: "2000"
     publicWsUrl: "wss://portfolio.numen.games/ws"
     publicApiUrl: "https://portfolio.numen.games/api"
     assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/portfolio/latest/assets"
