@@ -5,6 +5,7 @@ resources:
   - ../org-config/overlays/pre
   - ../christian/pre
   - ../experience/pre
+  - ../ghost/pre
   - ../pablofm/pre
   - ../r3s3t/pre
   - ../mmerge/pre

@@ -3,6 +3,11 @@ kind: Kustomization
 namespace: numen-games
 resources:
   - ../org-config/overlays/pro
+  - ../christian/pro
+  - ../experience/pro
   - ../ghost/pro
+  - ../pablofm/pro
   - ../r3s3t/pro
   - ../mmerge/pro
+  - ../theculturalcyberhive/pro
+  - ../portfolio/pro

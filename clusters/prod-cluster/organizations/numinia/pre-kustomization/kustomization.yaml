@@ -3,6 +3,7 @@ kind: Kustomization
 namespace: numinia-pre
 resources:
   - ../org-config/overlays/pre
+  - ../city-of-mesa/pre
   - ../house-of-riddles/pre
   - ../lemuria-academy/pre
   - ../multiplex/pre
