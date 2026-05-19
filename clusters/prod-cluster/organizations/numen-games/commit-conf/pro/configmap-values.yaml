@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: commit-conf-pro-values
+  namespace: numen-games
+  annotations:
+    config-version: "1.0.0"
+data:
+  values.yaml: |
+    awsSecretName: "hyperfy2-numen-games-commit-conf-pro"
+    orgName: "numen-games"
+    appName: "commit-conf"
+    environment: "pro"
+    namespace: numen-games
+    serviceAccountName: "numen-games"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "dev"
+    world: "pro-commit-conf"
+    publicMaxUploadSize: "1"
+    publicWsUrl: "wss://commit-conf.numen.games/ws"
+    publicApiUrl: "https://commit-conf.numen.games/api"
+    assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/commit-conf/latest/assets"
+    clean: "true"
+    tlsSecretName: "numen-games-tls"
+    resources:
+      requests:
+        cpu: "256m"
+        memory: "256Mi"
+      limits:
+        cpu: "1024m"
+        memory: "2048Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: commit-conf.numen.games
+      namespace: numen-games
