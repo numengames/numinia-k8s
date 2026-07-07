@@ -1,0 +1,20 @@
+# Deploys Knative Serving + Kourier via the operator. The operator (helmrelease.yaml) provides this CRD, so on a
+# fresh cluster Flux may apply this once before the CRD exists — it self-heals on the next reconcile.
+apiVersion: operator.knative.dev/v1beta1
+kind: KnativeServing
+metadata:
+  name: knative-serving
+  namespace: knative-serving
+spec:
+  config:
+    domain:
+      # Default Knative domain. Change to YOUR domain for a new account.
+      # (Per-world DomainMappings override this, so it is only the fallback.)
+      numinia.xyz: ""
+    network:
+      ingress-class: kourier.ingress.networking.knative.dev
+  high-availability:
+    replicas: 1
+  ingress:
+    kourier:
+      enabled: true

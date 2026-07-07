@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
   # Load balancer controller must be first as it's required by Traefik 
   - aws-load-balancer-controller 
-  - cert-manager 
+  - cert-manager
+  - knative
