@@ -3,11 +3,12 @@ kind: Kustomization
 namespace: numen-games-pre
 resources:
   - ../org-config/overlays/pre
-  - ../christian/pre
-  - ../experience/pre
-  - ../ghost/pre
-  - ../pablofm/pre
-  - ../r3s3t/pre
-  - ../mmerge/pre
-  - ../theculturalcyberhive/pre
+  # Temporarily reduced to portfolio for the resume test — uncomment to restore all worlds.
+  # - ../christian/pre
+  # - ../experience/pre
+  # - ../ghost/pre
+  # - ../pablofm/pre
+  # - ../r3s3t/pre
+  # - ../mmerge/pre
+  # - ../theculturalcyberhive/pre
   - ../portfolio/pre

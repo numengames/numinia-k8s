@@ -1,16 +1,17 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: numen-games-pro-apps
-  namespace: flux-system
-spec:
-  interval: 5m0s
-  path: ./clusters/prod-cluster/organizations/numen-games/pro-kustomization
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
----
+# PRO temporarily disabled for the resume test — uncomment the block to restore it.
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: numen-games-pro-apps
+#   namespace: flux-system
+# spec:
+#   interval: 5m0s
+#   path: ./clusters/prod-cluster/organizations/numen-games/pro-kustomization
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
+# ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
