@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: adventure-import-pro-values
+  namespace: numen-games
+  annotations:
+    config-version: "1.0.0"
+data:
+  values.yaml: |
+    awsSecretName: "hyperfy2-numen-games-adventure-import-pro"
+    orgName: "numen-games"
+    appName: "adventure-import"
+    environment: "pro"
+    namespace: numen-games
+    serviceAccountName: "numen-games"
+    image:
+      repository: "ghcr.io/numengames/numinia-hyperfy2"
+      tag: "dev"
+    world: "pro-adventure-import"
+    publicMaxUploadSize: "1"
+    publicWsUrl: "wss://adventure-import.numen.games/ws"
+    publicApiUrl: "https://adventure-import.numen.games/api"
+    assetsBaseUrl: "https://statics.numinia.xyz/hyperfy-spaces/numen-games/adventure-import/latest/assets"
+    clean: "true"
+    tlsSecretName: "numen-games-tls"
+    resources:
+      requests:
+        cpu: "256m"
+        memory: "256Mi"
+      limits:
+        cpu: "1024m"
+        memory: "2048Mi"
+    autoscaling:
+      minScale: 0
+      maxScale: 1
+    domainMapping:
+      enabled: true
+      hostname: adventure-import.numen.games
+      namespace: numen-games
