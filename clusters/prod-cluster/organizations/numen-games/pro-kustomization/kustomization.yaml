@@ -3,14 +3,15 @@ kind: Kustomization
 namespace: numen-games
 resources:
   - ../org-config/overlays/pro
-  - ../christian/pro
-  - ../experience/pro
-  - ../ghost/pro
-  - ../pablofm/pro
-  - ../r3s3t/pro
-  - ../mmerge/pro
-  - ../theculturalcyberhive/pro
-  - ../portfolio/pro
-  - ../christian-p1/pro
-  - ../commit-conf/pro
+  # Temporarily reduced for the resume test — uncomment to restore all worlds.
+  # - ../christian/pro
+  # - ../experience/pro
+  # - ../ghost/pro
+  # - ../pablofm/pro
+  # - ../r3s3t/pro
+  # - ../mmerge/pro
+  # - ../theculturalcyberhive/pro
+  # - ../portfolio/pro
+  # - ../christian-p1/pro
+  # - ../commit-conf/pro
   - ../test/pro
