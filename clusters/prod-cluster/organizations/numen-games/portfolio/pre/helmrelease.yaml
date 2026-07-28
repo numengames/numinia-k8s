@@ -4,6 +4,7 @@ metadata:
   name: portfolio-pre
   namespace: numen-games-pre
 spec:
+  timeout: 15m
   interval: 5m
   releaseName: portfolio-pre
   targetNamespace: numen-games-pre
