@@ -7,6 +7,10 @@ metadata:
   namespace: knative-serving
 spec:
   config:
+    deployment:
+      # Knative's controller cannot auth against ECR to resolve tags to digests (401) — skip it;
+      # nodes pull with their own ECR permissions.
+      registries-skipping-tag-resolving: "241533135482.dkr.ecr.eu-west-1.amazonaws.com"
     defaults:
       # The hyperfy2 chart sets timeoutSeconds: 3600; Knative's default cap (600) rejects it.
       max-revision-timeout-seconds: "3600"
