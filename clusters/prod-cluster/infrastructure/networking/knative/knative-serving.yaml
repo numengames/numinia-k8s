@@ -22,6 +22,12 @@ spec:
       ingress-class: kourier.ingress.networking.knative.dev
       # Required for per-world DomainMappings (otherwise: DomainAlreadyClaimed).
       autocreate-cluster-domain-claims: "true"
+      # Auto-issue a cert per DomainMapping via cert-manager (worlds are wss:// clients).
+      external-domain-tls: Enabled
+    certmanager:
+      issuerRef: |
+        kind: ClusterIssuer
+        name: letsencrypt-numinia-prod-knative
   high-availability:
     replicas: 1
   ingress:
