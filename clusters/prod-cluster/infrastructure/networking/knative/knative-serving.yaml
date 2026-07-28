@@ -7,12 +7,17 @@ metadata:
   namespace: knative-serving
 spec:
   config:
+    defaults:
+      # The hyperfy2 chart sets timeoutSeconds: 3600; Knative's default cap (600) rejects it.
+      max-revision-timeout-seconds: "3600"
     domain:
       # Default Knative domain. Change to YOUR domain for a new account.
       # (Per-world DomainMappings override this, so it is only the fallback.)
       numinia.xyz: ""
     network:
       ingress-class: kourier.ingress.networking.knative.dev
+      # Required for per-world DomainMappings (otherwise: DomainAlreadyClaimed).
+      autocreate-cluster-domain-claims: "true"
   high-availability:
     replicas: 1
   ingress:
