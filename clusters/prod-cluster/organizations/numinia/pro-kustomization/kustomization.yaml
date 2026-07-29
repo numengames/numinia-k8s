@@ -3,8 +3,8 @@ kind: Kustomization
 namespace: numinia
 resources:
   - ../org-config/overlays/pro
-  - ../city-of-mesa/pro
-  - ../house-of-riddles/pro
-  - ../lemuria-academy/pro
+  # - ../city-of-mesa/pro  # temporarily disabled for the resume test
+  # - ../house-of-riddles/pro  # temporarily disabled for the resume test
+  # - ../lemuria-academy/pro  # temporarily disabled for the resume test
   - ../multiplex/pro
-  - ../pablofm-p1/pro
+  # - ../pablofm-p1/pro  # temporarily disabled for the resume test

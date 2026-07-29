@@ -5,6 +5,6 @@ resources:
   - infrastructure-kustomizations.yaml
   # Temporarily reduced to a single org for the resume test — uncomment to restore all worlds.
   - organizations/numen-games
-  # - organizations/numinia
+  - organizations/numinia
   # - organizations/active-inference
   # - organizations/r3s3t
